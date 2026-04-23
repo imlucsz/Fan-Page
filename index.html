@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Penn Badgley — YOU | Joe Goldberg</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Playfair Display (editorial/literary) + DM Sans (clean body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ============================================================
+       CURSOR PERSONALIZADO
+  ============================================================ -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+
+  <!-- ============================================================
+       NAVEGAÇÃO PRINCIPAL
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="nav-logo">YOU</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#perfil" class="nav-link">Perfil</a></li>
+      <li><a href="#timeline" class="nav-link">Timeline</a></li>
+      <li><a href="#obras" class="nav-link">Obras</a></li>
+      <li><a href="#quiz" class="nav-link">Quiz</a></li>
+      <li><a href="#player" class="nav-link">Vídeos</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       HERO — SEÇÃO DE PERFIL PRINCIPAL
+  ============================================================ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-overlay"></div>
+    <!-- Texto flutuante de fundo (efeito atmosférico) -->
+    <div class="hero-ambient-text">YOU</div>
+
+    <div class="hero-content">
+      <!-- Foto do ator -->
+      <div class="hero-image-wrap" data-tilt>
+        <div class="hero-image-frame">
+          <img
+            src="https://i.pinimg.com/736x/51/28/ff/5128ffa2cbe6ce5ef0453decd5262b93.jpg"
+            alt="Penn Badgley"
+            class="hero-photo"
+            id="heroPhoto"
+          />
+          <video
+            src="Movies/%C3%89%20VOC%C3%8A%20ou%20NADA.mp4"
+            class="hero-video"
+            id="heroVideo"
+            playsinline
+            loop
+            muted
+          ></video>
+        </div>
+        <div class="hero-image-label">Penn Badgley<br/><em>como Joe Goldberg</em></div>
+      </div>
+
+      <!-- Texto principal -->
+      <div class="hero-text">
+        <p class="hero-eyebrow">Ator · Músico · Ícone</p>
+        <h1 class="hero-title">Penn<br/><span class="hero-title-accent">Badgley</span></h1>
+        <div class="hero-divider"></div>
+        <p class="hero-quote">
+          <em>"Você é meu único pensamento. Você é tudo."</em>
+          <span class="hero-quote-attr">— Joe Goldberg, YOU</span>
+        </p>
+        <p class="hero-bio">
+          Nascido em 1 de novembro de 1986, em Baltimore, Maryland, Penn Badgley é ator e músico
+          americano. Ficou mundialmente famoso ao interpretar <strong>Dan Humphrey</strong> em
+          <em>Gossip Girl</em> e o inquietante <strong>Joe Goldberg</strong> na série
+          <em>YOU</em>, da Netflix — papel que o consagrou como um dos atores mais
+          fascinantes de sua geração.
+        </p>
+
+        <!-- BOTÕES INTERATIVOS -->
+        <div class="hero-buttons">
+          <button class="btn btn-primary" id="btnCuriosidades">
+            <span class="btn-icon">👁</span> Mostrar Curiosidades
+          </button>
+          <button class="btn btn-secondary" id="btnConquistas">
+            <span class="btn-icon">🏆</span> Ver Conquistas
+          </button>
+        </div>
+
+        <!-- PAINEL: Curiosidades (oculto por padrão) -->
+        <div class="info-panel" id="panelCuriosidades">
+          <h3 class="panel-title">👁 Curiosidades sobre Penn Badgley</h3>
+          <ul class="panel-list">
+            <li>Penn iniciou a carreira ainda criança, nos anos 1990, com pequenos papéis em televisão.</li>
+            <li>É músico e vocalista da banda <strong>MOTHXR</strong>, com estilo indie/synth-pop.</li>
+            <li>Casou-se com a cantora <strong>Domino Kirke</strong> em 2017.</li>
+            <li>É pai de um filho, nascido em 2021.</li>
+            <li>Penn é ativista e defensor de causas humanitárias e ambientais.</li>
+            <li>Ele próprio ficou surpreso com o sucesso de <em>YOU</em> na Netflix.</li>
+            <li>Interage frequentemente com fãs que "romantizam" Joe Goldberg para alertá-los sobre comportamentos tóxicos.</li>
+          </ul>
+        </div>
+
+        <!-- PAINEL: Conquistas (oculto por padrão) -->
+        <div class="info-panel" id="panelConquistas">
+          <h3 class="panel-title">🏆 Conquistas & Prêmios</h3>
+          <ul class="panel-list">
+            <li><strong>2019</strong> — Saturn Award: Melhor Ator em Série de Horror/Thriller (YOU)</li>
+            <li><strong>2020</strong> — MTV Movie & TV Award: Melhor Vilão (Joe Goldberg)</li>
+            <li><strong>2020</strong> — People's Choice Award: Série de drama favorita (YOU)</li>
+            <li><strong>2022</strong> — Critics Choice Super Award: Melhor Ator em Série de Horror</li>
+            <li><strong>2023</strong> — Screen Actors Guild Award: Indicação por YOU S4</li>
+            <li><strong>Gossip Girl</strong> — Teen Choice Awards múltiplas vezes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="scroll-indicator">
+      <span>Role para baixo</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABAS (TABS) — Sobre / Carreira / Prêmios
+  ============================================================ -->
+  <section class="tabs-section" id="perfil">
+    <div class="container">
+      <h2 class="section-title">Conheça Penn Badgley</h2>
+
+      <!-- Botões das abas -->
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="sobre" role="tab" aria-selected="true">Sobre</button>
+        <button class="tab-btn" data-tab="carreira" role="tab" aria-selected="false">Carreira</button>
+        <button class="tab-btn" data-tab="premios" role="tab" aria-selected="false">Prêmios</button>
+      </div>
+
+      <!-- Conteúdo das abas -->
+      <div class="tabs-content">
+
+        <!-- Aba: Sobre -->
+        <div class="tab-pane active" id="tab-sobre" role="tabpanel">
+          <div class="tab-grid">
+            <div class="tab-text">
+              <h3>Quem é Penn Badgley?</h3>
+              <p>
+                Penn Badgley cresceu em Richmond, Virginia, e desde jovem demonstrou talento artístico.
+                Antes de conquistar Hollywood, fez parte de produções teatrais locais e pequenas
+                aparições em séries de TV.
+              </p>
+              <p>
+                Seu grande salto para a fama chegou com <em>Gossip Girl</em> (2007–2012), onde
+                interpretou o escritor aspirante Dan Humphrey — e a revelação de que ele era o
+                narrador anônimo que batizou a série.
+              </p>
+              <p>
+                A transformação definitiva na carreira veio com <em>YOU</em> (2018–presente), série
+                da Netflix onde Penn vive <strong>Joe Goldberg</strong>, um homem aparentemente
+                charmoso e culto que esconde uma mente obcecada e perigosa. A performance rendeu
+                elogios unânimes da crítica.
+              </p>
+            </div>
+            <div class="tab-stats">
+              <div class="stat-card">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Temporadas de YOU</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Temporadas de Gossip Girl</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">20+</span>
+                <span class="stat-label">Anos de carreira</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">87M</span>
+                <span class="stat-label">Lares alcançados (YOU S4)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba: Carreira -->
+        <div class="tab-pane" id="tab-carreira" role="tabpanel">
+          <div class="career-list">
+            <div class="career-item">
+              <span class="career-year">2000</span>
+              <div class="career-details">
+                <h4>The WB / Séries iniciais</h4>
+                <p>Primeiros papéis em séries de TV americanas, incluindo <em>Do Over</em> e <em>The Mountain</em>.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year">2007</span>
+              <div class="career-details">
+                <h4>Gossip Girl — Dan Humphrey</h4>
+                <p>Estreia na CW como Dan Humphrey, o "outsider" de Brooklyn que se torna o núcleo da trama.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year">2012</span>
+              <div class="career-details">
+                <h4>Cinema: Griff the Invisible, Easy A</h4>
+                <p>Expande carreira com filmes independentes e produções de Hollywood.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year">2015</span>
+              <div class="career-details">
+                <h4>MOTHXR — Banda Musical</h4>
+                <p>Funda a banda MOTHXR e lança o álbum <em>Centerfold</em>, mostrando talento musical.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year">2018</span>
+              <div class="career-details">
+                <h4>YOU — Joe Goldberg (Lifetime / Netflix)</h4>
+                <p>Estreia como Joe Goldberg. A série muda de canal para Netflix e se torna fenômeno global.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year">2023</span>
+              <div class="career-details">
+                <h4>YOU Season 4 — Recordes Netflix</h4>
+                <p>A 4ª temporada bate recordes: 87 milhões de lares assistiram nas primeiras semanas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Aba: Prêmios -->
+        <div class="tab-pane" id="tab-premios" role="tabpanel">
+          <div class="awards-grid">
+            <div class="award-card">
+              <div class="award-icon">🪐</div>
+              <div class="award-info">
+                <span class="award-year">2019</span>
+                <h4>Saturn Award</h4>
+                <p>Melhor Ator em Série de Horror/Thriller</p>
+              </div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🎬</div>
+              <div class="award-info">
+                <span class="award-year">2020</span>
+                <h4>MTV Movie & TV Award</h4>
+                <p>Melhor Vilão — Joe Goldberg</p>
+              </div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">👑</div>
+              <div class="award-info">
+                <span class="award-year">2020</span>
+                <h4>People's Choice Award</h4>
+                <p>Série de Drama Favorita (YOU)</p>
+              </div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">⭐</div>
+              <div class="award-info">
+                <span class="award-year">2022</span>
+                <h4>Critics Choice Super Award</h4>
+                <p>Melhor Ator em Série de Horror/Thriller</p>
+              </div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🎭</div>
+              <div class="award-info">
+                <span class="award-year">2023</span>
+                <h4>SAG Award</h4>
+                <p>Indicação — Elenco de YOU S4</p>
+              </div>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🏄</div>
+              <div class="award-info">
+                <span class="award-year">2008–12</span>
+                <h4>Teen Choice Awards</h4>
+                <p>Múltiplas vitórias por Gossip Girl</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.tabs-content -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALERIA DE IMAGENS
+  ============================================================ -->
+  <section class="gallery-section">
+    <div class="container">
+      <h2 class="section-title">Galeria</h2>
+      <p class="section-subtitle">Penn Badgley · Joe Goldberg · YOU</p>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item gallery-item--large" data-caption="Penn Badgley em evento de divulgação de YOU">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Penn_Badgley_2012.jpg/800px-Penn_Badgley_2012.jpg" alt="Penn Badgley" />
+          <div class="gallery-overlay"><span>Penn Badgley</span></div>
+        </div>
+        <div class="gallery-item" data-caption="Joe Goldberg — personagem de YOU">
+          <img src="https://m.media-amazon.com/images/M/MV5BMjQ0Nzk5NTEtYzgxMS00ZjIwLWJlZDYtNjA4NDcwN2UxNjVhXkEyXkFqcGc@._V1_.jpg" alt="YOU série" />
+          <div class="gallery-overlay"><span>YOU — Netflix</span></div>
+        </div>
+        <div class="gallery-item" data-caption="Penn Badgley no SAG Awards">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Penn_Badgley_2019_by_Glenn_Francis.jpg/800px-Penn_Badgley_2019_by_Glenn_Francis.jpg" alt="Penn Badgley SAG" />
+          <div class="gallery-overlay"><span>SAG Awards</span></div>
+        </div>
+        <div class="gallery-item" data-caption="Cena icônica da série YOU">
+          <img src="https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_.jpg" alt="YOU cena" />
+          <div class="gallery-overlay"><span>Cena Icônica</span></div>
+        </div>
+        <div class="gallery-item" data-caption="Penn Badgley — elegância e intensidade">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Penn_Badgley_SDCC_2019.jpg/800px-Penn_Badgley_SDCC_2019.jpg" alt="Penn Badgley SDCC" />
+          <div class="gallery-overlay"><span>San Diego Comic-Con</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LINHA DO TEMPO (TIMELINE)
+  ============================================================ -->
+  <section class="timeline-section" id="timeline">
+    <div class="container">
+      <h2 class="section-title">Linha do Tempo</h2>
+      <p class="section-subtitle">A evolução de uma carreira marcante</p>
+
+      <div class="timeline" id="timelineContainer">
+
+        <div class="timeline-item" data-year="1986">
+          <div class="timeline-marker">
+            <span class="timeline-year">1986</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Nascimento</h3>
+            <p>Penn Dayton Badgley nasce em 1º de novembro, em Baltimore, Maryland, EUA.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Origem</span>
+              Cresceu em Richmond, Virginia, e desenvolveu interesse por artes desde criança.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2000">
+          <div class="timeline-marker">
+            <span class="timeline-year">2000</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Primeiros Passos</h3>
+            <p>Início da carreira em séries televisivas como <em>Do Over</em> e anúncios publicitários.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">TV</span>
+              Pequenos papéis que ajudaram a construir experiência antes do grande salto.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2007">
+          <div class="timeline-marker">
+            <span class="timeline-year">2007</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Gossip Girl</h3>
+            <p>Estreia como <strong>Dan Humphrey</strong> na CW. A série se torna fenômeno cultural teen.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Grande Salto</span>
+              6 temporadas, prêmios Teen Choice e reconhecimento internacional.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2012">
+          <div class="timeline-marker">
+            <span class="timeline-year">2012</span>
+          </div>
+          <div class="timeline-card">
+            <h3>Gossip Girl Revelação &amp; Cinema</h3>
+            <p>Fim de Gossip Girl com a revelação de que Dan era o Gossip Girl. Transição para o cinema.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Virada</span>
+              Filmes como <em>Margin Call</em> e exploração de papéis mais dramáticos.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2015">
+          <div class="timeline-marker">
+            <span class="timeline-year">2015</span>
+          </div>
+          <div class="timeline-card">
+            <h3>MOTHXR — Música</h3>
+            <p>Funda a banda indie <strong>MOTHXR</strong> e lança o álbum <em>Centerfold</em>.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Música</span>
+              Mostra versatilidade artística além da atuação, com shows nos EUA e Europa.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2018">
+          <div class="timeline-marker">
+            <span class="timeline-year">2018</span>
+          </div>
+          <div class="timeline-card">
+            <h3>YOU — Estreia</h3>
+            <p>Estreia como <strong>Joe Goldberg</strong> no Lifetime. A série é adquirida pela Netflix.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Renascimento</span>
+              Joe Goldberg se torna um dos personagens mais complexos do streaming.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2019">
+          <div class="timeline-marker">
+            <span class="timeline-year">2019</span>
+          </div>
+          <div class="timeline-card">
+            <h3>YOU S2 — Fenômeno Global</h3>
+            <p>A 2ª temporada alcança 40 milhões de visualizações em um mês. Saturn Award conquistado.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Prêmio</span>
+              Saturn Award de Melhor Ator em Série de Horror/Thriller.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2023">
+          <div class="timeline-marker">
+            <span class="timeline-year">2023</span>
+          </div>
+          <div class="timeline-card">
+            <h3>YOU S4 — Recordes Netflix</h3>
+            <p>87 milhões de lares assistem à 4ª temporada. Considerado um dos maiores lançamentos da Netflix.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Recorde</span>
+              Penn é cotado como um dos atores mais influentes de sua geração.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2025">
+          <div class="timeline-marker">
+            <span class="timeline-year">2025</span>
+          </div>
+          <div class="timeline-card">
+            <h3>YOU S5 — Temporada Final</h3>
+            <p>A temporada final de YOU é lançada. O fim da jornada de Joe Goldberg.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag">Fim de Era</span>
+              Penn encerra um dos capítulos mais marcantes de sua carreira.
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO ESTILO NETFLIX — OBRAS & MOMENTOS
+  ============================================================ -->
+  <section class="netflix-section" id="obras">
+    <!-- Banner Hero Netflix -->
+    <div class="netflix-banner">
+      <div class="netflix-banner-bg"></div>
+      <div class="netflix-banner-content">
+        <span class="netflix-badge">SÉRIE ORIGINAL NETFLIX</span>
+        <h2 class="netflix-banner-title">YOU</h2>
+        <p class="netflix-banner-desc">
+          Um homem encantador e culto que esconde um lado obscuro e obsessivo.
+          Cinco temporadas de suspense psicológico que redefiniu o thriller moderno.
+        </p>
+        <div class="netflix-banner-meta">
+          <span>2018 – 2025</span>
+          <span>5 Temporadas</span>
+          <span class="rating">TV-MA</span>
+        </div>
+        <div class="netflix-banner-buttons">
+          <button class="btn-netflix btn-netflix-play">▶ Assistir</button>
+          <button class="btn-netflix btn-netflix-info" onclick="openModal('you-series')">ℹ Mais Informações</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrossel: Obras -->
+    <div class="netflix-row">
+      <div class="container">
+        <h3 class="netflix-row-title">Obras de Penn Badgley</h3>
+        <div class="netflix-cards" id="worksCards">
+
+          <div class="netflix-card" data-modal="you-series">
+            <div class="netflix-card-img-wrap">
+              <img src="https://m.media-amazon.com/images/M/MV5BMjQ0Nzk5NTEtYzgxMS00ZjIwLWJlZDYtNjA4NDcwN2UxNjVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="YOU" loading="lazy"/>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <div class="card-meta">
+                  <span class="card-match">98% relevante</span>
+                  <span class="card-year">2018</span>
+                </div>
+                <p class="card-desc">Joe Goldberg — thriller psicológico, 5 temporadas.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>YOU</h4>
+              <span>Netflix · 2018–2025</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="gossip-girl">
+            <div class="netflix-card-img-wrap">
+              <img src="https://m.media-amazon.com/images/M/MV5BOGE4NTc4OTEtZGY4NC00NDUwLWFiZTQtMTQ4MjczNmJiM2IzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Gossip Girl" loading="lazy"/>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <div class="card-meta">
+                  <span class="card-match">95% relevante</span>
+                  <span class="card-year">2007</span>
+                </div>
+                <p class="card-desc">Dan Humphrey — drama teen de 6 temporadas.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>Gossip Girl</h4>
+              <span>CW · 2007–2012</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="easy-a">
+            <div class="netflix-card-img-wrap">
+              <img src="https://m.media-amazon.com/images/M/MV5BMTQxODE1NTM4OV5BMl5BanBnXkFtZTcwMzExMDUyMw@@._V1_FMjpg_UX1000_.jpg" alt="Easy A" loading="lazy"/>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <div class="card-meta">
+                  <span class="card-match">90% relevante</span>
+                  <span class="card-year">2010</span>
+                </div>
+                <p class="card-desc">Comédia romântica com Emma Stone.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>Easy A</h4>
+              <span>Filme · 2010</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="margin-call">
+            <div class="netflix-card-img-wrap">
+              <img src="https://m.media-amazon.com/images/M/MV5BMjI4MzgxMzQzMF5BMl5BanBnXkFtZTcwMzg0NjMwNw@@._V1_FMjpg_UX1000_.jpg" alt="Margin Call" loading="lazy"/>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <div class="card-meta">
+                  <span class="card-match">88% relevante</span>
+                  <span class="card-year">2011</span>
+                </div>
+                <p class="card-desc">Thriller financeiro com Kevin Spacey.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>Margin Call</h4>
+              <span>Filme · 2011</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="you-s4">
+            <div class="netflix-card-img-wrap">
+              <img src="https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="YOU Season 4" loading="lazy"/>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <div class="card-meta">
+                  <span class="card-match">97% relevante</span>
+                  <span class="card-year">2023</span>
+                </div>
+                <p class="card-desc">Joe em Londres. 87M de lares na primeira semana.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>YOU — Season 4</h4>
+              <span>Netflix · 2023</span>
+            </div>
+          </div>
+
+        </div><!-- /.netflix-cards -->
+      </div>
+    </div>
+
+    <!-- Carrossel: Momentos Marcantes -->
+    <div class="netflix-row">
+      <div class="container">
+        <h3 class="netflix-row-title">Momentos Marcantes</h3>
+        <div class="netflix-cards" id="momentsCards">
+
+          <div class="netflix-card" data-modal="momento-glass-cage">
+            <div class="netflix-card-img-wrap moment-card">
+              <div class="moment-thumb" style="background: linear-gradient(135deg, #1a0a0a, #8b0000)">
+                <span class="moment-icon">🔒</span>
+              </div>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <p class="card-desc">A cela de vidro — o símbolo máximo de YOU.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>A Cela de Vidro</h4>
+              <span>YOU — Temporada 1</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="momento-revelation">
+            <div class="netflix-card-img-wrap moment-card">
+              <div class="moment-thumb" style="background: linear-gradient(135deg, #0a0a1a, #1a1a4a)">
+                <span class="moment-icon">👁</span>
+              </div>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <p class="card-desc">O monólogo interno de Joe — voz e mente.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>A Voz de Joe</h4>
+              <span>YOU — Narração</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="momento-gossip">
+            <div class="netflix-card-img-wrap moment-card">
+              <div class="moment-thumb" style="background: linear-gradient(135deg, #1a1510, #4a3510)">
+                <span class="moment-icon">📱</span>
+              </div>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <p class="card-desc">Dan = Gossip Girl: a revelação que chocou o mundo.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>Gossip Girl Revelado</h4>
+              <span>Gossip Girl — S6</span>
+            </div>
+          </div>
+
+          <div class="netflix-card" data-modal="momento-london">
+            <div class="netflix-card-img-wrap moment-card">
+              <div class="moment-thumb" style="background: linear-gradient(135deg, #0a1a0a, #0a3a0a)">
+                <span class="moment-icon">🇬🇧</span>
+              </div>
+              <div class="netflix-card-hover">
+                <button class="card-play-btn">▶</button>
+                <p class="card-desc">Joe em Londres — nova identidade, mesma escuridão.</p>
+              </div>
+            </div>
+            <div class="netflix-card-info">
+              <h4>Joe em Londres</h4>
+              <span>YOU — Season 4</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       QUIZ INTERATIVO
+  ============================================================ -->
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <h2 class="section-title">Quiz</h2>
+      <p class="section-subtitle">Quanto você sabe sobre Penn Badgley e a série YOU?</p>
+
+      <div class="quiz-container" id="quizContainer">
+        <!-- Tela inicial do quiz -->
+        <div class="quiz-start" id="quizStart">
+          <div class="quiz-start-icon">👁</div>
+          <h3>Você me conhece?</h3>
+          <p>10 perguntas sobre Penn Badgley, Joe Goldberg e a série YOU.</p>
+          <button class="btn btn-primary btn-lg" id="startQuizBtn">Começar Quiz</button>
+        </div>
+
+        <!-- Questão do quiz (gerado por JS) -->
+        <div class="quiz-question-wrap" id="quizQuestionWrap" style="display:none">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quizProgressFill"></div>
+          </div>
+          <div class="quiz-progress-text" id="quizProgressText">Pergunta 1 de 10</div>
+          <div class="quiz-score-live" id="quizScoreLive">Pontos: 0</div>
+          <h3 class="quiz-question-text" id="quizQuestionText"></h3>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <button class="btn btn-primary" id="quizNextBtn" style="display:none">Próxima →</button>
+        </div>
+
+        <!-- Resultado final -->
+        <div class="quiz-result" id="quizResult" style="display:none">
+          <div class="result-emoji" id="resultEmoji"></div>
+          <h3 id="resultTitle"></h3>
+          <div class="result-score-display" id="resultScore"></div>
+          <p id="resultMessage"></p>
+          <div class="result-bar-wrap">
+            <div class="result-bar" id="resultBar"></div>
+          </div>
+          <button class="btn btn-primary" id="retryQuizBtn">Tentar Novamente</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLAYER MULTIMÍDIA
+  ============================================================ -->
+  <section class="player-section" id="player">
+    <div class="container">
+      <h2 class="section-title">Player de Vídeos</h2>
+      <p class="section-subtitle">Entrevistas e cenas de destaque</p>
+
+      <div class="player-layout">
+        <!-- Player principal -->
+        <div class="player-main">
+          <div class="player-wrapper" id="playerWrapper">
+            <iframe
+              id="mainVideoFrame"
+              src="https://www.youtube.com/embed/s7eQYyHBGrw?enablejsapi=1"
+              title="Penn Badgley — YOU Trailer"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="player-info">
+            <h3 id="playerVideoTitle">YOU — Trailer Oficial (Netflix)</h3>
+            <p id="playerVideoDesc">Trailer oficial da série YOU na Netflix. Joe Goldberg — uma nova obsessão começa.</p>
+          </div>
+        </div>
+
+        <!-- Lista de vídeos -->
+        <div class="player-playlist">
+          <h4 class="playlist-title">Lista de Reprodução</h4>
+          <div class="playlist-items" id="playlistItems">
+
+            <div class="playlist-item active" data-video-id="s7eQYyHBGrw"
+                 data-title="YOU — Trailer Oficial (Netflix)"
+                 data-desc="Trailer oficial da série YOU na Netflix. Joe Goldberg — uma nova obsessão começa.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/s7eQYyHBGrw/mqdefault.jpg" alt="YOU Trailer" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">YOU — Trailer Oficial</span>
+                <span class="playlist-item-sub">Netflix · 2018</span>
+              </div>
+            </div>
+
+            <div class="playlist-item" data-video-id="X7lqJsNqTeE"
+                 data-title="YOU Season 4 — Trailer Oficial"
+                 data-desc="Joe Goldberg está em Londres. Nova identidade, velhos instintos. 4ª temporada.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/X7lqJsNqTeE/mqdefault.jpg" alt="YOU S4" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">YOU S4 — Trailer</span>
+                <span class="playlist-item-sub">Netflix · 2023</span>
+              </div>
+            </div>
+
+            <div class="playlist-item" data-video-id="8Y8HkZDvdHo"
+                 data-title="Penn Badgley — Entrevista Jimmy Fallon"
+                 data-desc="Penn Badgley fala sobre ser Joe Goldberg no programa de Jimmy Fallon.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/8Y8HkZDvdHo/mqdefault.jpg" alt="Jimmy Fallon" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Entrevista — Jimmy Fallon</span>
+                <span class="playlist-item-sub">Tonight Show · 2021</span>
+              </div>
+            </div>
+
+            <div class="playlist-item" data-video-id="nGnmWBIMpKA"
+                 data-title="Penn Badgley responde fãs que amam Joe"
+                 data-desc="Penn Badgley reage ao TikTok de fãs que romantizam Joe Goldberg.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/nGnmWBIMpKA/mqdefault.jpg" alt="Penn Badgley responde" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Penn vs fãs de Joe</span>
+                <span class="playlist-item-sub">Buzzfeed · 2019</span>
+              </div>
+            </div>
+
+            <div class="playlist-item" data-video-id="p9hKa7JMZjM"
+                 data-title="YOU Season 5 — Trailer Final"
+                 data-desc="O fim da história de Joe Goldberg. A temporada final de YOU.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/p9hKa7JMZjM/mqdefault.jpg" alt="YOU S5" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">YOU S5 — Temporada Final</span>
+                <span class="playlist-item-sub">Netflix · 2025</span>
+              </div>
+            </div>
+
+          </div><!-- /.playlist-items -->
+        </div><!-- /.player-playlist -->
+      </div><!-- /.player-layout -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">YOU</span>
+          <p>Site de fã dedicado a Penn Badgley e Joe Goldberg.</p>
+          <p class="footer-disclaimer">Projeto não oficial. Apenas fins educacionais/fã.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Seções</h5>
+          <ul>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#obras">Obras</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#player">Vídeos</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h5>Redes Sociais (Penn Badgley)</h5>
+          <div class="social-links">
+            <a href="https://www.instagram.com/pennbadgley/" target="_blank" rel="noopener" class="social-link">Instagram</a>
+            <a href="https://twitter.com/Penn_Badgley" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Site Fã — Penn Badgley & YOU. Criado com HTML, CSS e JavaScript puro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       MODAIS
+  ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BOTÃO VOLTAR AO TOPO
+  ============================================================ -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- JS Principal -->
+  <script src="script.js"></script>
+</body>
+</html>
