@@ -15,8 +15,8 @@
   --black-card:  #161616;
   --black-hover: #1e1e1e;
   --dark-red:    #8b0000;
-  --red:         #c0392b;
-  --red-bright:  #e74c3c;
+  --red:         #a00a0a;
+  --red-bright:  #860505;
   --red-glow:    rgba(192,57,43,0.25);
   --white:       #f5f0eb;
   --white-dim:   rgba(245,240,235,0.75);
@@ -714,6 +714,22 @@ body:hover .custom-cursor { opacity: 1; }
   grid-template-columns: 1fr 320px;
   gap: var(--space-lg);
   align-items: start;
+}
+
+.tab-grid--sobre {
+  grid-template-columns: 220px 1fr 320px;
+}
+
+.tab-gif {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tab-gif img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
 }
 
 .tab-text h3 {
@@ -1971,7 +1987,8 @@ body:hover .custom-cursor { opacity: 1; }
     gap: var(--space-lg);
   }
 
-  .tab-grid {
+  .tab-grid,
+  .tab-grid--sobre {
     grid-template-columns: 1fr;
   }
 
@@ -2109,6 +2126,11 @@ body:hover .custom-cursor { opacity: 1; }
   }
 
   .footer-brand { grid-column: span 1; }
+
+  .tab-gif {
+    max-width: 240px;
+    margin: 0 auto;
+  }
 
   /* Botões hero empilhados */
   .hero-buttons { flex-direction: column; align-items: center; }
