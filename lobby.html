@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escolha seu Universo — YOU × Curry</title>
+
+  <!-- Google Fonts: Playfair + DM Sans (mesmo do site principal) + Montserrat para Curry -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS principal (existente) + bloco de expansão -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="curry-lobby.css" />
+</head>
+<body class="lobby-body">
+
+  <!-- ============================================================
+       OVERLAY DE TRANSIÇÃO (fade para a próxima página)
+  ============================================================ -->
+  <div id="transitionOverlay" class="transition-overlay"></div>
+
+  <!-- ============================================================
+       CONTAINER PRINCIPAL DO LOBBY (split 50/50)
+  ============================================================ -->
+  <div class="lobby-container" id="lobbyContainer">
+
+    <!-- ======================================================
+         PAINEL ESQUERDO — YOU / Penn Badgley
+         Canvas com logo "YOU" fatiado + efeito de sangue
+    ====================================================== -->
+    <div class="lobby-panel lobby-panel--you" id="panelYOU">
+
+      <!-- Canvas ocupa 100% do painel esquerdo -->
+      <canvas id="youCanvasLobby" class="you-canvas-lobby" aria-hidden="true"></canvas>
+
+      <!-- Grain cinematográfico (overlay de textura) -->
+      <div class="lobby-grain" aria-hidden="true"></div>
+
+      <!-- Vinheta de escuridão nas bordas -->
+      <div class="lobby-vignette you-vignette" aria-hidden="true"></div>
+
+      <!-- Conteúdo sobre o canvas -->
+      <div class="lobby-panel-content you-content">
+
+        <!-- Badge Netflix no topo -->
+        <div class="lobby-badge badge--netflix">
+          <span class="netflix-n-icon">N</span>
+          <span class="badge-label">SERIES</span>
+        </div>
+
+        <!-- Nome do ator (bottom-left) -->
+        <div class="lobby-actor-block">
+          <p class="lobby-actor-name">Penn Badgley</p>
+          <p class="lobby-actor-role">como <em>Joe Goldberg</em></p>
+        </div>
+
+        <!-- CTA / botão de entrada -->
+        <button
+          class="lobby-enter-btn you-enter-btn"
+          id="enterYOUBtn"
+          aria-label="Entrar na página de Penn Badgley / YOU"
+          onclick="navigateTo('you')"
+        >
+          <span class="enter-btn-text">Entrar no Universo YOU</span>
+          <span class="enter-btn-arrow">→</span>
+          <div class="enter-btn-ripple"></div>
+        </button>
+
+      </div><!-- /.you-content -->
+    </div><!-- /#panelYOU -->
+
+    <!-- ======================================================
+         DIVISOR CENTRAL
+    ====================================================== -->
+    <div class="lobby-divider" id="lobbyDivider" aria-hidden="true">
+      <div class="divider-line divider-line--top"></div>
+      <div class="divider-vs">VS</div>
+      <div class="divider-line divider-line--bottom"></div>
+    </div>
+
+    <!-- ======================================================
+         PAINEL DIREITO — Stephen Curry / Spotify
+    ====================================================== -->
+    <div class="lobby-panel lobby-panel--curry" id="panelCurry">
+
+      <!-- Esferas de brilho verde (background decoration) -->
+      <div class="curry-bg-orbs" aria-hidden="true">
+        <div class="curry-orb curry-orb--1"></div>
+        <div class="curry-orb curry-orb--2"></div>
+        <div class="curry-orb curry-orb--3"></div>
+        <div class="curry-orb curry-orb--4"></div>
+      </div>
+
+      <!-- Linhas de grade estilo Spotify (decoração) -->
+      <div class="curry-grid-lines" aria-hidden="true"></div>
+
+      <!-- Grain overlay -->
+      <div class="lobby-grain" aria-hidden="true"></div>
+      <div class="lobby-vignette curry-vignette" aria-hidden="true"></div>
+
+      <!-- Conteúdo do painel Curry -->
+      <div class="lobby-panel-content curry-content">
+
+        <!-- Badge Spotify no topo -->
+        <div class="lobby-badge badge--spotify">
+          <span class="spotify-logo-icon">♫</span>
+          <span class="badge-label">FEATURED ARTIST</span>
+        </div>
+
+        <!-- Elemento visual: Vinil / Record giratório -->
+        <div class="curry-vinyl-wrap">
+          <div class="curry-vinyl-disk" id="curryVinylDisk">
+            <!-- Grooves CSS -->
+            <div class="vinyl-grooves">
+              <div class="vinyl-groove" style="--r:44%"></div>
+              <div class="vinyl-groove" style="--r:54%"></div>
+              <div class="vinyl-groove" style="--r:64%"></div>
+              <div class="vinyl-groove" style="--r:74%"></div>
+              <div class="vinyl-groove" style="--r:84%"></div>
+            </div>
+            <!-- Label central com número 30 -->
+            <div class="vinyl-center-label">
+              <span class="vinyl-number">30</span>
+              <span class="vinyl-team-abbr">GSW</span>
+            </div>
+          </div>
+          <!-- Agulha do toca-discos -->
+          <div class="vinyl-needle">
+            <div class="needle-arm"></div>
+            <div class="needle-tip"></div>
+          </div>
+        </div>
+
+        <!-- Nome e equalizador -->
+        <div class="curry-name-block">
+          <h2 class="curry-lobby-title">STEPHEN<br/>CURRY</h2>
+          <!-- Equalizador de barras animado -->
+          <div class="curry-equalizer" aria-label="Equalizador de música">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+          </div>
+          <p class="curry-lobby-subtitle">Golden State Warriors · Nº 30</p>
+        </div>
+
+        <!-- Mini Playlist com conquistas -->
+        <ul class="curry-mini-playlist" aria-label="Principais conquistas">
+          <li class="curry-track">
+            <span class="track-num">01</span>
+            <span class="track-name">4× Campeão NBA</span>
+            <span class="track-badge">🏆</span>
+          </li>
+          <li class="curry-track">
+            <span class="track-num">02</span>
+            <span class="track-name">2× MVP da Liga</span>
+            <span class="track-badge">⭐</span>
+          </li>
+          <li class="curry-track">
+            <span class="track-num">03</span>
+            <span class="track-name">3.747+ arremessos de 3pts</span>
+            <span class="track-badge">🎯</span>
+          </li>
+          <li class="curry-track">
+            <span class="track-num">04</span>
+            <span class="track-name">Ouro Olímpico — Paris 2024</span>
+            <span class="track-badge">🥇</span>
+          </li>
+        </ul>
+
+        <!-- CTA / botão de entrada -->
+        <button
+          class="lobby-enter-btn curry-enter-btn"
+          id="enterCurryBtn"
+          aria-label="Entrar na página de Stephen Curry"
+          onclick="navigateTo('curry')"
+        >
+          <span class="enter-btn-text">Entrar no Universo Curry</span>
+          <span class="enter-btn-arrow">→</span>
+          <div class="enter-btn-ripple"></div>
+        </button>
+
+      </div><!-- /.curry-content -->
+    </div><!-- /#panelCurry -->
+
+  </div><!-- /.lobby-container -->
+
+  <!-- ============================================================
+       SCRIPTS INLINE — Canvas YOU + Navegação
+  ============================================================ -->
+  <script>
+  /*
+   * ===========================================================
+   * LOBBY.JS — Canvas YOU animado + Lógica de Navegação
+   * ===========================================================
+   */
+
+  /* ---- ESTADO DO LOBBY ---- */
+  let isNavigating = false;
+
+  /* ---- EFEITO HOVER NOS PAINÉIS ---- */
+  (function initHoverEffects() {
+    const container = document.getElementById('lobbyContainer');
+    const panelYOU  = document.getElementById('panelYOU');
+    const panelCurry= document.getElementById('panelCurry');
+
+    panelYOU.addEventListener('mouseenter',  () => container.classList.add('hover-you'));
+    panelYOU.addEventListener('mouseleave',  () => container.classList.remove('hover-you'));
+    panelCurry.addEventListener('mouseenter',() => container.classList.add('hover-curry'));
+    panelCurry.addEventListener('mouseleave',() => container.classList.remove('hover-curry'));
+  })();
+
+  /* ---- NAVEGAÇÃO COM TRANSIÇÃO ---- */
+  function navigateTo(destination) {
+    if (isNavigating) return;
+    isNavigating = true;
+
+    const container = document.getElementById('lobbyContainer');
+    const overlay   = document.getElementById('transitionOverlay');
+    const target    = destination === 'you' ? 'index.html' : 'curry.html';
+
+    // Desabilita cliques
+    document.querySelectorAll('.lobby-panel').forEach(p => p.style.pointerEvents = 'none');
+
+    // Fase 1: Expande o painel escolhido para 100%
+    container.classList.add('expanding-' + destination);
+
+    // Fase 2: Fade para preto e redireciona
+    setTimeout(function() {
+      overlay.classList.add('active');
+      setTimeout(function() {
+        window.location.href = target;
+      }, 450);
+    }, 650);
+  }
+
+  /* ---- CANVAS YOU — Logo animado com efeito de sangue ---- */
+  (function initYOUCanvas() {
+    'use strict';
+
+    var canvas = document.getElementById('youCanvasLobby');
+    if (!canvas) return;
+    var ctx    = canvas.getContext('2d');
+    var panel  = document.getElementById('panelYOU');
+
+    /* ── Dimensionamento: canvas preenche o painel ── */
+    function resize() {
+      canvas.width  = panel.offsetWidth;
+      canvas.height = panel.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', function() {
+      var prevW = canvas.width;
+      resize();
+      if (Math.abs(canvas.width - prevW) > 20) { location.reload(); }
+    });
+
+    var CW = canvas.width;
+    var CH = canvas.height;
+
+    /* ── Tipografia e posicionamento do texto ── */
+    var FONT_SIZE   = Math.min(CW * 0.66, 460);
+    var TEXT_Y      = CH * 0.07;                       /* topo do texto */
+    var TEXT_BOTTOM = TEXT_Y + FONT_SIZE * 0.96;       /* base do texto */
+
+    /* ── Cortes (slices) do logo ── */
+    /* Posições relativas à altura do glifo (~40%, 73%, 97% da altura) */
+    var CUTS = [
+      { y: TEXT_Y + FONT_SIZE * 0.40, h: 3.5, dx:  9 },
+      { y: TEXT_Y + FONT_SIZE * 0.73, h: 2.8, dx: -7 },
+      { y: TEXT_Y + FONT_SIZE * 0.97, h: 2.2, dx:  5 },
+    ];
+
+    /* Segmentos entre os cortes (para clip + offset horizontal) */
+    var SEGS = [
+      { from: 0,                     to: CUTS[0].y,            dx: 0           },
+      { from: CUTS[0].y + CUTS[0].h, to: CUTS[1].y,            dx: CUTS[0].dx  },
+      { from: CUTS[1].y + CUTS[1].h, to: CUTS[2].y,            dx: CUTS[1].dx  },
+      { from: CUTS[2].y + CUTS[2].h, to: CH,                   dx: CUTS[2].dx  },
+    ];
+
+    /* ── Região do sangue (abaixo do texto) ── */
+    var BLOOD_TOP = TEXT_BOTTOM;
+    var BLOOD_H   = CH - BLOOD_TOP;
+
+    /* ── Âncoras X dos respingos (alinhadas às letras Y-O-U) ── */
+    function anchors() {
+      return [
+        CW*0.10, CW*0.15, CW*0.21, CW*0.27,
+        CW*0.35, CW*0.42, CW*0.50, CW*0.57,
+        CW*0.64, CW*0.70, CW*0.77, CW*0.83, CW*0.89
+      ];
+    }
+
+    /* ─────────────────────────────────────────
+       Desenha "YOU" com segmentos deslocados
+    ───────────────────────────────────────── */
+    function drawYOU() {
+      var FONT = '900 italic ' + FONT_SIZE + 'px \'Playfair Display\', Georgia, serif';
+
+      SEGS.forEach(function(seg) {
+        var height = seg.to - seg.from;
+        if (height <= 0) return;
+        ctx.save();
+        ctx.beginPath();
+        ctx.rect(0, seg.from, CW, height);
+        ctx.clip();
+        ctx.font = FONT;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.fillStyle = '#0e0e0e';
+        ctx.fillText('YOU', CW / 2 + seg.dx, TEXT_Y);
+        ctx.restore();
+      });
+
+      /* Linhas vermelhas nas fendas */
+      CUTS.forEach(function(cut) {
+        var g = ctx.createLinearGradient(CW * 0.05, cut.y, CW * 0.95, cut.y);
+        g.addColorStop(0,    'rgba(50,0,0,0)');
+        g.addColorStop(0.12, 'rgba(150,8,8,0.65)');
+        g.addColorStop(0.50, 'rgba(200,16,16,0.92)');
+        g.addColorStop(0.88, 'rgba(150,8,8,0.65)');
+        g.addColorStop(1,    'rgba(50,0,0,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, cut.y, CW, cut.h);
+
+        /* Reflexo branco-quente ultra fino */
+        ctx.fillStyle = 'rgba(255,70,70,0.15)';
+        ctx.fillRect(0, cut.y, CW, 0.8);
+      });
+    }
+
+    /* ─────────────────────────────────────────
+       Classe: Drip (fio grosso de sangue)
+    ───────────────────────────────────────── */
+    function Drip() { this.reset(true); }
+    Drip.prototype.reset = function(init) {
+      var ax = anchors();
+      this.x     = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.06;
+      this.topY  = BLOOD_TOP;
+      this.maxY  = BLOOD_TOP + BLOOD_H * (0.3 + Math.random() * 0.7);
+      this.head  = this.topY;
+      this.spd   = 0.10 + Math.random() * 0.45;
+      this.w     = 1.5 + Math.random() * 3.5;
+      this.alpha = 0.45 + Math.random() * 0.40;
+      this.done  = false;
+      this.delay = (init ? Math.random() * 4500 : Math.random() * 1200) + performance.now();
+      this.headR = this.w * 1.6;
+    };
+    Drip.prototype.tick = function(now) {
+      if (now < this.delay || this.done) return;
+      this.head += this.spd;
+      if (this.head >= this.maxY) this.done = true;
+    };
+    Drip.prototype.draw = function(ctx, now) {
+      if (now < this.delay || this.head <= this.topY) return;
+      var g = ctx.createLinearGradient(this.x, this.topY, this.x, this.head);
+      g.addColorStop(0, 'rgba(110,0,0,' + (this.alpha * 0.5) + ')');
+      g.addColorStop(1, 'rgba(75,0,0,'  + this.alpha + ')');
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.topY);
+      ctx.lineTo(this.x, this.head);
+      ctx.strokeStyle = g;
+      ctx.lineWidth   = this.w;
+      ctx.lineCap     = 'round';
+      ctx.stroke();
+      if (!this.done) {
+        ctx.beginPath();
+        ctx.ellipse(this.x, this.head, this.headR * 0.85, this.headR * 1.4, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(125,0,0,' + this.alpha + ')';
+        ctx.fill();
+      } else {
+        for (var i = 0; i < 3; i++) {
+          ctx.beginPath();
+          ctx.ellipse(
+            this.x + (Math.random() - 0.5) * 4, this.maxY,
+            this.w * (1.4 + i * 0.6), this.w * (0.5 + i * 0.25),
+            0, 0, Math.PI * 2
+          );
+          ctx.fillStyle = 'rgba(80,0,0,' + (this.alpha * (0.7 - i * 0.18)) + ')';
+          ctx.fill();
+        }
+      }
+    };
+
+    /* ─────────────────────────────────────────
+       Classe: Drop (gotas e spray)
+    ───────────────────────────────────────── */
+    function Drop(init) { this.reset(init); }
+    Drop.prototype.reset = function(init) {
+      var ax = anchors();
+      this.x     = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.09;
+      this.y     = BLOOD_TOP + BLOOD_H * 0.02;
+      this.vy    = 0.45 + Math.random() * 1.7;
+      this.vx    = (Math.random() - 0.5) * 0.55;
+      this.r     = 1.2 + Math.random() * 2.8;
+      this.alpha = 0.6 + Math.random() * 0.3;
+      this.str   = 1   + Math.random() * 2.1;
+      this.trail = [];
+      this.delay = (init ? Math.random() * 4000 : Math.random() * 250) + performance.now();
+      this.alive = false;
+    };
+    Drop.prototype.tick = function(now) {
+      if (!this.alive) { if (now >= this.delay) this.alive = true; else return; }
+      this.trail.push({ x: this.x, y: this.y, r: this.r * 0.5 });
+      if (this.trail.length > 9) this.trail.shift();
+      this.y    += this.vy;
+      this.x    += this.vx;
+      this.vy   *= 1.018;
+      this.r     = Math.max(0.2, this.r - 0.013);
+      this.alpha = Math.max(0, this.alpha - 0.002);
+      if (this.y > CH * 1.06 || this.r < 0.2 || this.alpha <= 0) this.reset(false);
+    };
+    Drop.prototype.draw = function(ctx) {
+      if (!this.alive) return;
+      var self = this;
+      this.trail.forEach(function(t, i) {
+        ctx.beginPath();
+        ctx.ellipse(t.x, t.y, t.r * 0.55, t.r * 0.85, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(90,0,0,' + ((i / self.trail.length) * self.alpha * 0.4) + ')';
+        ctx.fill();
+      });
+      ctx.beginPath();
+      ctx.ellipse(this.x, this.y, this.r * 0.68, this.r * this.str, 0, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(115,0,0,' + this.alpha + ')';
+      ctx.fill();
+    };
+
+    /* ─────────────────────────────────────────
+       Classe: Puddle (poças acumuladas)
+    ───────────────────────────────────────── */
+    function Puddle() {
+      var ax = anchors();
+      this.x     = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.07;
+      this.y     = BLOOD_TOP + BLOOD_H * (0.45 + Math.random() * 0.45);
+      this.rx    = 0; this.ry = 0;
+      this.maxRx = 5 + Math.random() * 16;
+      this.maxRy = this.maxRx * 0.38;
+      this.alpha = 0.28 + Math.random() * 0.25;
+      this.spd   = 0.03 + Math.random() * 0.09;
+      this.delay = Math.random() * 5500 + performance.now();
+    }
+    Puddle.prototype.tick = function(now) {
+      if (now < this.delay || this.rx >= this.maxRx) return;
+      this.rx += this.spd;
+      this.ry  = this.rx * 0.38;
+    };
+    Puddle.prototype.draw = function(ctx, now) {
+      if (now < this.delay || this.rx < 0.5) return;
+      ctx.beginPath();
+      ctx.ellipse(this.x, this.y, this.rx, this.ry, 0, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(65,0,0,' + this.alpha + ')';
+      ctx.fill();
+    };
+
+    /* ── Inicializa partículas ── */
+    var drips   = Array.from({ length: 26 }, function()       { return new Drip(); });
+    var drops   = Array.from({ length: 130 }, function(_, i)  { return new Drop(true); });
+    var puddles = Array.from({ length: 16 }, function()       { return new Puddle(); });
+
+    /* ── Loop principal de animação ── */
+    var BLOOD_DELAY = 800; // ms após início
+    var startTime   = null;
+
+    function loop(now) {
+      if (!startTime) startTime = now;
+
+      ctx.clearRect(0, 0, CW, CH);
+
+      /* Fundo ultra-escuro com leve persistência */
+      ctx.fillStyle = 'rgba(10,10,10,0.07)';
+      ctx.fillRect(0, 0, CW, CH);
+
+      drawYOU();
+
+      if (now - startTime > BLOOD_DELAY) {
+        puddles.forEach(function(p) { p.tick(now); p.draw(ctx, now); });
+        drips.forEach(function(d)   { d.tick(now); d.draw(ctx, now); });
+        drops.forEach(function(d)   { d.tick(now); d.draw(ctx); });
+      }
+
+      requestAnimationFrame(loop);
+    }
+
+    /* Aguarda fontes carregarem antes de iniciar */
+    document.fonts.ready.then(function() {
+      requestAnimationFrame(loop);
+    });
+
+  })(); // fim initYOUCanvas
+
+  /* ---- SPIN DO VINIL ---- */
+  (function initVinyl() {
+    var disk = document.getElementById('curryVinylDisk');
+    if (!disk) return;
+    /* Pausa/retoma rotação no hover do painel Curry */
+    var panel = document.getElementById('panelCurry');
+    panel.addEventListener('mouseenter', function() {
+      disk.style.animationPlayState = 'running';
+    });
+  })();
+
+  </script>
+
+</body>
+</html>

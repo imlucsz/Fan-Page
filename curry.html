@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="curry">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stephen Curry — Golden State Warriors | Universo Curry</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- CSS principal + bloco Curry/Lobby -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="curry-lobby.css" />
+</head>
+<body data-theme="curry">
+
+  <!-- Cursor personalizado (verde) -->
+  <div class="custom-cursor" id="cursor"></div>
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+
+  <!-- ============================================================
+       NAVEGAÇÃO
+  ============================================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <!-- Botão: voltar ao lobby -->
+      <a href="lobby.html" class="nav-back-btn" aria-label="Voltar ao Lobby">
+        <span class="nav-back-arrow">←</span>
+        <span class="nav-back-text">Lobby</span>
+      </a>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#perfil"   class="nav-link">Perfil</a></li>
+      <li><a href="#timeline" class="nav-link">Timeline</a></li>
+      <li><a href="#spotify"  class="nav-link">Destaques</a></li>
+      <li><a href="#quiz"     class="nav-link">Quiz</a></li>
+      <li><a href="#player"   class="nav-link">Vídeos</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ============================================================
+       HERO — PERFIL STEPHEN CURRY
+  ============================================================ -->
+  <section class="hero curry-hero" id="home">
+    <div class="hero-bg-overlay curry-hero-overlay"></div>
+
+    <!-- Texto ambiente de fundo -->
+    <div class="hero-ambient-text curry-ambient">30</div>
+
+    <div class="hero-content">
+
+      <!-- Foto -->
+      <div class="hero-image-wrap" data-tilt>
+        <div class="hero-image-frame">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Stephen_Curry_2016_%28cropped%29.jpg/800px-Stephen_Curry_2016_%28cropped%29.jpg"
+            alt="Stephen Curry"
+            class="hero-photo"
+            id="heroPhoto"
+          />
+          <div class="hero-image-glitch"></div>
+        </div>
+        <!-- Número da camisa como label -->
+        <div class="hero-image-label curry-label">
+          Stephen Curry
+          <em>#30 · Golden State Warriors</em>
+        </div>
+        <!-- Badge de temporadas de campeão -->
+        <div class="curry-champion-badge">
+          <span>🏆 × 4</span>
+        </div>
+      </div>
+
+      <!-- Texto principal -->
+      <div class="hero-text">
+        <p class="hero-eyebrow curry-eyebrow">Armador · Campeão · GOAT</p>
+        <h1 class="hero-title">Stephen<br/><span class="hero-title-accent curry-title-accent">Curry</span></h1>
+        <div class="hero-divider curry-divider"></div>
+
+        <p class="hero-quote curry-quote">
+          <em>"I can do all things..."</em>
+          <span class="hero-quote-attr">— Stephen Curry</span>
+        </p>
+
+        <p class="hero-bio">
+          Nascido em 14 de março de 1988, em Charlotte, Carolina do Norte,
+          <strong>Wardell Stephen Curry II</strong> é considerado o maior arremessador de
+          3 pontos da história da NBA. Com 4 títulos pelo Golden State Warriors,
+          2 prêmios de MVP e um recorde absoluto de arremessos de 3 pontos
+          (<strong>3.747+</strong>), Curry redefiniu a forma de se jogar basquete.
+        </p>
+
+        <!-- Botões interativos -->
+        <div class="hero-buttons">
+          <button class="btn btn-primary curry-btn-primary" id="btnCuriosidades">
+            <span class="btn-icon">🏀</span> Mostrar Curiosidades
+          </button>
+          <button class="btn btn-secondary curry-btn-secondary" id="btnConquistas">
+            <span class="btn-icon">🏆</span> Ver Conquistas
+          </button>
+        </div>
+
+        <!-- Painel curiosidades -->
+        <div class="info-panel curry-panel" id="panelCuriosidades">
+          <h3 class="panel-title">🏀 Curiosidades sobre Stephen Curry</h3>
+          <ul class="panel-list">
+            <li>Curry foi ignorado pelos grandes scouts universitários e foi para Davidson College, uma escola pequena.</li>
+            <li>Filho de Dell Curry, ex-jogador da NBA, o basquete sempre fez parte de sua vida.</li>
+            <li>Sofreu de tornozelos fracos no início da carreira e quase perdeu o contrato de rookie.</li>
+            <li>Em 2015/16, tornou-se o <strong>primeiro MVP unânime</strong> da história da NBA.</li>
+            <li>Sua parceria com Klay Thompson criou o apelido "Splash Brothers".</li>
+            <li>É fã declarado de golfe e já participou de torneios profissionais de celebridades.</li>
+            <li>Junto com a esposa Ayesha Curry, é embaixador de diversas causas sociais.</li>
+            <li>Ganhou medalha de <strong>ouro olímpico</strong> com os EUA em Paris 2024.</li>
+          </ul>
+        </div>
+
+        <!-- Painel conquistas -->
+        <div class="info-panel curry-panel" id="panelConquistas">
+          <h3 class="panel-title">🏆 Conquistas & Prêmios</h3>
+          <ul class="panel-list">
+            <li><strong>2015, 2017, 2018, 2022</strong> — 4× Campeão da NBA</li>
+            <li><strong>2015</strong> — MVP da NBA (1ª vez)</li>
+            <li><strong>2016</strong> — MVP da NBA unânime (único na história)</li>
+            <li><strong>2022</strong> — MVP das Finais da NBA</li>
+            <li><strong>2021</strong> — Recorde absoluto de 3pts: superou Ray Allen (2.974)</li>
+            <li><strong>2024</strong> — Medalha de Ouro Olímpica (Paris)</li>
+            <li>9× Seleção All-Star</li>
+            <li>2× Líder em arremessos de 3pts na temporada regular</li>
+          </ul>
+        </div>
+      </div><!-- /.hero-text -->
+    </div><!-- /.hero-content -->
+
+    <div class="scroll-indicator">
+      <span>Role para baixo</span>
+      <div class="scroll-arrow curry-scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABAS — Sobre / Carreira / Estatísticas
+  ============================================================ -->
+  <section class="tabs-section curry-tabs" id="perfil">
+    <div class="container">
+      <h2 class="section-title">Conheça Stephen Curry</h2>
+
+      <div class="tabs-nav" role="tablist">
+        <button class="tab-btn active" data-tab="sobre"      role="tab">Sobre</button>
+        <button class="tab-btn"        data-tab="carreira"   role="tab">Carreira</button>
+        <button class="tab-btn"        data-tab="estatisticas" role="tab">Estatísticas</button>
+      </div>
+
+      <div class="tabs-content">
+
+        <!-- ABA: Sobre -->
+        <div class="tab-pane active" id="tab-sobre" role="tabpanel">
+          <div class="tab-grid">
+            <div class="tab-text">
+              <h3>Quem é Stephen Curry?</h3>
+              <p>
+                Stephen Curry cresceu vendo seu pai Dell Curry jogar na NBA — e foi além. 
+                Desprezado pelos principais scouts universitários, foi para Davidson College,
+                onde chamou atenção com uma temporada histórica no torneio da NCAA de 2008.
+              </p>
+              <p>
+                Selecionado pelo Golden State Warriors como 7ª escolha geral em 2009, Curry
+                transformou uma franquia mediana em uma <strong>dinastia</strong>. Ao lado de Klay Thompson
+                e Draymond Green, criou um dos jogos mais belos e letais da história da NBA.
+              </p>
+              <p>
+                Mais do que títulos, Curry mudou o basquete. O arremesso de 3 pontos —
+                antes considerado uma escolha ruim — tornou-se a arma mais valorizada do
+                esporte. Seu impacto vai além da quadra: é símbolo de dedicação,
+                humildade e talento excepcional.
+              </p>
+            </div>
+            <div class="tab-stats">
+              <div class="stat-card curry-stat">
+                <span class="stat-number">4</span>
+                <span class="stat-label">Títulos NBA</span>
+              </div>
+              <div class="stat-card curry-stat">
+                <span class="stat-number">3.747+</span>
+                <span class="stat-label">Arremessos de 3pts</span>
+              </div>
+              <div class="stat-card curry-stat">
+                <span class="stat-number">2</span>
+                <span class="stat-label">MVPs da Liga</span>
+              </div>
+              <div class="stat-card curry-stat">
+                <span class="stat-number">29.4</span>
+                <span class="stat-label">Pontos / Jogo (melhor)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABA: Carreira -->
+        <div class="tab-pane" id="tab-carreira" role="tabpanel">
+          <div class="career-list">
+            <div class="career-item">
+              <span class="career-year curry-year">2009</span>
+              <div class="career-details">
+                <h4>NBA Draft — Golden State Warriors</h4>
+                <p>7ª escolha geral. Muitos duvidavam de sua resistência física — Curry provou todos errado.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2013</span>
+              <div class="career-details">
+                <h4>Contrato renovado — início da era Warriors</h4>
+                <p>Com Steve Kerr como técnico, a equipe adota o sistema ofensivo que exaltava Curry.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2015</span>
+              <div class="career-details">
+                <h4>1º Título NBA + 1º MVP</h4>
+                <p>Warriors derrotam o Cleveland Cavaliers. Curry vence seu primeiro MVP da liga.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2016</span>
+              <div class="career-details">
+                <h4>MVP Unânime + Recorde de 402 bolas de 3</h4>
+                <p>Torna-se o único MVP unânime da história da NBA. Warriors chegam a 73 vitórias.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2017</span>
+              <div class="career-details">
+                <h4>2º Título NBA</h4>
+                <p>Com Kevin Durant no time, Warriors derrotam Cavaliers nas Finais.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2021</span>
+              <div class="career-details">
+                <h4>Recorde absoluto de 3pts na NBA</h4>
+                <p>Supera Ray Allen com 2.974 arremessos de 3 pontos convertidos. Hoje: 3.747+.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2022</span>
+              <div class="career-details">
+                <h4>4º Título + MVP das Finais</h4>
+                <p>Após anos sem títulos, Warriors voltam ao topo. Curry finalmente ganha o MVP das Finais.</p>
+              </div>
+            </div>
+            <div class="career-item">
+              <span class="career-year curry-year">2024</span>
+              <div class="career-details">
+                <h4>Ouro Olímpico — Paris 2024</h4>
+                <p>Liderou os EUA à vitória olímpica na França, com performance histórica na final.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ABA: Estatísticas -->
+        <div class="tab-pane" id="tab-estatisticas" role="tabpanel">
+          <div class="awards-grid">
+            <div class="award-card curry-award">
+              <div class="award-icon">🏀</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">24.8 PPG</span>
+                <h4>Média de pontos</h4>
+                <p>Pontos por jogo em toda a carreira na NBA</p>
+              </div>
+            </div>
+            <div class="award-card curry-award">
+              <div class="award-icon">🎯</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">42.7%</span>
+                <h4>Aproveitamento de 3pts</h4>
+                <p>Melhor % histórico para volume de arremessos</p>
+              </div>
+            </div>
+            <div class="award-card curry-award">
+              <div class="award-icon">⚡</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">6.3 APG</span>
+                <h4>Média de assistências</h4>
+                <p>Criador de jogo além de pontuador</p>
+              </div>
+            </div>
+            <div class="award-card curry-award">
+              <div class="award-icon">🔥</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">402</span>
+                <h4>Recorde de 3pts/temporada</h4>
+                <p>Temporada 2015–16: 402 bolas de 3 convertidas</p>
+              </div>
+            </div>
+            <div class="award-card curry-award">
+              <div class="award-icon">🏆</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">2015–2022</span>
+                <h4>Era dos Warriors</h4>
+                <p>6 Finais em 8 anos com Curry como protagonista</p>
+              </div>
+            </div>
+            <div class="award-card curry-award">
+              <div class="award-icon">🌟</div>
+              <div class="award-info">
+                <span class="award-year curry-award-year">9×</span>
+                <h4>Seleção All-Star</h4>
+                <p>Um dos mais votados do Oeste por anos consecutivos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.tabs-content -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LINHA DO TEMPO — CURRY
+  ============================================================ -->
+  <section class="timeline-section curry-timeline-section" id="timeline">
+    <div class="container">
+      <h2 class="section-title">Linha do Tempo</h2>
+      <p class="section-subtitle">Da Davidson College à lenda da NBA</p>
+
+      <div class="timeline" id="timelineContainer">
+
+        <div class="timeline-item" data-year="1988">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">1988</span></div>
+          <div class="timeline-card">
+            <h3>Nascimento</h3>
+            <p>Wardell Stephen Curry II nasce em 14 de março, em Charlotte, Carolina do Norte.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Origem</span>
+              Filho de Dell Curry (ex-NBA), cresceu nos bastidores de arenas e quadras.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2006">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2006</span></div>
+          <div class="timeline-card">
+            <h3>Davidson College</h3>
+            <p>Ignorado pelas grandes universidades, vai para Davidson College e explode no basquete universitário.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Universidade</span>
+              Média de 25.9 pontos na NCAA — a nação inteira começa a prestar atenção.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2009">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2009</span></div>
+          <div class="timeline-card">
+            <h3>NBA Draft — #7 Overall</h3>
+            <p>Golden State Warriors selecionam Curry como 7ª escolha. Contrato de rookie em risco pelos problemas nos tornozelos.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Início</span>
+              Curry assina extensão de contrato controversa — considerada arriscada na época, foi o melhor investimento da história dos Warriors.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2015">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2015</span></div>
+          <div class="timeline-card">
+            <h3>1º Título + 1º MVP</h3>
+            <p>Warriors vencem o Campeonato NBA. Curry é eleito MVP da Liga pela primeira vez.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Título</span>
+              Fim de um jejum de 40 anos para a franquia. A era dos Warriors começa.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2016">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2016</span></div>
+          <div class="timeline-card">
+            <h3>MVP Unânime — Único na História</h3>
+            <p>Curry recebe 131 de 131 votos para o MVP. Warriors chegam a 73 vitórias. Recorde de 402 bolas de 3.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Histórico</span>
+              Nenhum jogador antes ou depois conseguiu votos unânimes para o MVP na NBA.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2021">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2021</span></div>
+          <div class="timeline-card">
+            <h3>Recorde Absoluto de 3pts</h3>
+            <p>Supera Ray Allen (2.974) e torna-se o maior arremessador de 3 pontos da história da NBA.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Recorde</span>
+              Hoje com 3.747+ cestas de 3 pontos — um recorde que pode durar décadas.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2022">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2022</span></div>
+          <div class="timeline-card">
+            <h3>4º Título + MVP das Finais</h3>
+            <p>Warriors conquistam o 4º título da era Curry. Stephen finalmente ganha o prêmio que faltava: MVP das Finais.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Legado</span>
+              Com o MVP das Finais, Curry completa o círculo: campeão em todos os aspectos do jogo.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-year="2024">
+          <div class="timeline-marker"><span class="timeline-year curry-timeline-year">2024</span></div>
+          <div class="timeline-card">
+            <h3>Ouro Olímpico — Paris 2024</h3>
+            <p>Liderou a equipe dos EUA à vitória olímpica. Performance na final contra a França foi histórica.</p>
+            <div class="timeline-detail">
+              <span class="timeline-tag curry-tag">Olimpíadas</span>
+              Seu crossover e bola de 3 no último período da final viraram símbolo do torneio.
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.timeline -->
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SEÇÃO SPOTIFY — Destaques da Carreira
+  ============================================================ -->
+  <section class="spotify-section" id="spotify">
+
+    <!-- Banner estilo Spotify Artist Page -->
+    <div class="spotify-banner">
+      <div class="spotify-banner-bg"></div>
+      <div class="spotify-banner-content container">
+        <span class="spotify-verified">✓ Artista Verificado</span>
+        <h2 class="spotify-artist-name">Stephen Curry</h2>
+        <p class="spotify-followers">
+          <span class="spotify-stat-num">4</span> Títulos · 
+          <span class="spotify-stat-num">3.747+</span> Cestas de 3pts ·
+          <span class="spotify-stat-num">2</span> MVPs
+        </p>
+        <div class="spotify-banner-actions">
+          <button class="spotify-play-btn" aria-label="Reproduzir destaques">
+            <span>▶</span>
+          </button>
+          <button class="spotify-follow-btn">Seguir</button>
+          <button class="spotify-more-btn" aria-label="Mais opções">···</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row: Jogos Históricos -->
+    <div class="spotify-row">
+      <div class="container">
+        <h3 class="spotify-row-title">🔥 Jogos Históricos</h3>
+        <div class="spotify-cards" id="gamesCards">
+
+          <div class="spotify-card" data-modal="curry-62pts">
+            <div class="spotify-card-img">
+              <div class="spotify-card-thumb" style="background: linear-gradient(135deg, #0a1a0a, #1DB954)">
+                <span class="spotify-card-icon">🏀</span>
+              </div>
+              <button class="spotify-card-play">▶</button>
+            </div>
+            <div class="spotify-card-info">
+              <h4>62 Pontos</h4>
+              <p>vs. Portland Trail Blazers</p>
+            </div>
+          </div>
+
+          <div class="spotify-card" data-modal="curry-finals-2022">
+            <div class="spotify-card-img">
+              <div class="spotify-card-thumb" style="background: linear-gradient(135deg, #0a100a, #169040)">
+                <span class="spotify-card-icon">🏆</span>
+              </div>
+              <button class="spotify-card-play">▶</button>
+            </div>
+            <div class="spotify-card-info">
+              <h4>Finais 2022</h4>
+              <p>MVP das Finais · Série completa</p>
+            </div>
+          </div>
+
+          <div class="spotify-card" data-modal="curry-record">
+            <div class="spotify-card-img">
+              <div class="spotify-card-thumb" style="background: linear-gradient(135deg, #0a0a10, #1DB954)">
+                <span class="spotify-card-icon">🎯</span>
+              </div>
+              <button class="spotify-card-play">▶</button>
+            </div>
+            <div class="spotify-card-info">
+              <h4>Recorde de 3pts</h4>
+              <p>vs. Knicks — Nov 2021</p>
+            </div>
+          </div>
+
+          <div class="spotify-card" data-modal="curry-allstar-3pt">
+            <div class="spotify-card-img">
+              <div class="spotify-card-thumb" style="background: linear-gradient(135deg, #100a0a, #2DB954)">
+                <span class="spotify-card-icon">⭐</span>
+              </div>
+              <button class="spotify-card-play">▶</button>
+            </div>
+            <div class="spotify-card-info">
+              <h4>All-Star 3PT Contest</h4>
+              <p>3× Campeão do concurso</p>
+            </div>
+          </div>
+
+          <div class="spotify-card" data-modal="curry-olympics">
+            <div class="spotify-card-img">
+              <div class="spotify-card-thumb" style="background: linear-gradient(135deg, #0a0a15, #1DB954)">
+                <span class="spotify-card-icon">🥇</span>
+              </div>
+              <button class="spotify-card-play">▶</button>
+            </div>
+            <div class="spotify-card-info">
+              <h4>Olimpíadas Paris 2024</h4>
+              <p>Final USA vs. França</p>
+            </div>
+          </div>
+
+        </div><!-- /.spotify-cards -->
+      </div>
+    </div>
+
+    <!-- Row: Estatísticas como Álbuns -->
+    <div class="spotify-row">
+      <div class="container">
+        <h3 class="spotify-row-title">📊 Estatísticas em Destaque</h3>
+        <div class="spotify-cards" id="statsCards">
+
+          <div class="spotify-card spotify-album-card" data-modal="stat-3pts">
+            <div class="spotify-card-img">
+              <div class="spotify-album-art" style="background: conic-gradient(#1DB954 42.7%, #161616 0)">
+                <div class="spotify-album-center"><span>42.7%</span></div>
+              </div>
+            </div>
+            <div class="spotify-card-info">
+              <h4>% de 3 Pontos</h4>
+              <p>Aproveitamento na carreira</p>
+            </div>
+          </div>
+
+          <div class="spotify-card spotify-album-card" data-modal="stat-scoring">
+            <div class="spotify-card-img">
+              <div class="spotify-album-art" style="background: conic-gradient(#1DB954 83%, #161616 0)">
+                <div class="spotify-album-center"><span>24.8</span></div>
+              </div>
+            </div>
+            <div class="spotify-card-info">
+              <h4>PPG Carreira</h4>
+              <p>Média de pontos por jogo</p>
+            </div>
+          </div>
+
+          <div class="spotify-card spotify-album-card" data-modal="stat-assists">
+            <div class="spotify-card-img">
+              <div class="spotify-album-art" style="background: conic-gradient(#1DB954 63%, #161616 0)">
+                <div class="spotify-album-center"><span>6.3</span></div>
+              </div>
+            </div>
+            <div class="spotify-card-info">
+              <h4>APG Carreira</h4>
+              <p>Média de assistências</p>
+            </div>
+          </div>
+
+          <div class="spotify-card spotify-album-card" data-modal="stat-wins">
+            <div class="spotify-card-img">
+              <div class="spotify-album-art" style="background: conic-gradient(#1DB954 90%, #161616 0)">
+                <div class="spotify-album-center"><span>73</span></div>
+              </div>
+            </div>
+            <div class="spotify-card-info">
+              <h4>Vitórias em 2015/16</h4>
+              <p>Recorde histórico de vitórias</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       QUIZ INTERATIVO — CURRY
+  ============================================================ -->
+  <section class="quiz-section curry-quiz-section" id="quiz">
+    <div class="container">
+      <h2 class="section-title">Quiz</h2>
+      <p class="section-subtitle">Quanto você sabe sobre Stephen Curry?</p>
+
+      <div class="quiz-container" id="quizContainer">
+        <!-- Tela inicial -->
+        <div class="quiz-start curry-quiz-start" id="quizStart">
+          <div class="quiz-start-icon">🏀</div>
+          <h3>Você conhece o Chef Curry?</h3>
+          <p>10 perguntas sobre a carreira, recordes e curiosidades de Stephen Curry.</p>
+          <button class="btn btn-primary curry-btn-primary btn-lg" id="startQuizBtn">Começar Quiz</button>
+        </div>
+
+        <!-- Questão ativa -->
+        <div class="quiz-question-wrap" id="quizQuestionWrap" style="display:none">
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill curry-progress" id="quizProgressFill"></div>
+          </div>
+          <div class="quiz-progress-text" id="quizProgressText">Pergunta 1 de 10</div>
+          <div class="quiz-score-live curry-score" id="quizScoreLive">Pontos: 0</div>
+          <h3 class="quiz-question-text" id="quizQuestionText"></h3>
+          <div class="quiz-options" id="quizOptions"></div>
+          <div class="quiz-feedback" id="quizFeedback"></div>
+          <button class="btn btn-primary curry-btn-primary" id="quizNextBtn" style="display:none">Próxima →</button>
+        </div>
+
+        <!-- Resultado -->
+        <div class="quiz-result" id="quizResult" style="display:none">
+          <div class="result-emoji" id="resultEmoji"></div>
+          <h3 id="resultTitle"></h3>
+          <div class="result-score-display curry-result-score" id="resultScore"></div>
+          <p id="resultMessage"></p>
+          <div class="result-bar-wrap">
+            <div class="result-bar curry-result-bar" id="resultBar"></div>
+          </div>
+          <button class="btn btn-primary curry-btn-primary" id="retryQuizBtn">Tentar Novamente</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PLAYER MULTIMÍDIA — CURRY
+  ============================================================ -->
+  <section class="player-section curry-player-section" id="player">
+    <div class="container">
+      <h2 class="section-title">Player de Vídeos</h2>
+      <p class="section-subtitle">Highlights, recordes e entrevistas</p>
+
+      <div class="player-layout">
+        <!-- Player principal -->
+        <div class="player-main">
+          <div class="player-wrapper">
+            <iframe
+              id="mainVideoFrame"
+              src="https://www.youtube.com/embed/pjNMd4fTOmM?enablejsapi=1"
+              title="Stephen Curry — Highlights"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="player-info">
+            <h3 id="playerVideoTitle">Stephen Curry — Top 50 Plays de Todos os Tempos</h3>
+            <p id="playerVideoDesc">As melhores jogadas da carreira de Stephen Curry — arremessos impossíveis, dribles, assistências e momentos históricos.</p>
+          </div>
+        </div>
+
+        <!-- Playlist -->
+        <div class="player-playlist">
+          <h4 class="playlist-title">Lista de Reprodução</h4>
+          <div class="playlist-items" id="playlistItems">
+
+            <div class="playlist-item active"
+                 data-video-id="pjNMd4fTOmM"
+                 data-title="Stephen Curry — Top 50 Plays"
+                 data-desc="Os 50 melhores momentos da carreira de Curry na NBA — compilação épica.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/pjNMd4fTOmM/mqdefault.jpg" alt="Top 50 Curry" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Top 50 Plays — Carreira</span>
+                <span class="playlist-item-sub">NBA · Compilação</span>
+              </div>
+            </div>
+
+            <div class="playlist-item"
+                 data-video-id="Nt7FSLJkaBE"
+                 data-title="Stephen Curry — 62 Pontos vs Trail Blazers"
+                 data-desc="Curry marca 62 pontos contra o Portland Trail Blazers — maior pontuação de sua carreira.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/Nt7FSLJkaBE/mqdefault.jpg" alt="62 pts Curry" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">62 Pontos — Recorde Pessoal</span>
+                <span class="playlist-item-sub">NBA · Jan 2021</span>
+              </div>
+            </div>
+
+            <div class="playlist-item"
+                 data-video-id="e-O_oi2S-RY"
+                 data-title="Curry quebra o Recorde de Ray Allen"
+                 data-desc="O momento histórico em que Stephen Curry se torna o maior arremessador de 3 pontos da história da NBA.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/e-O_oi2S-RY/mqdefault.jpg" alt="Recorde Curry" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Recorde de 3pts — Ray Allen</span>
+                <span class="playlist-item-sub">NBA · Nov 2021</span>
+              </div>
+            </div>
+
+            <div class="playlist-item"
+                 data-video-id="WMeRXIyXOTk"
+                 data-title="Finals 2022 — Stephen Curry MVP"
+                 data-desc="Curry lidera os Warriors ao 4º título e ganha o primeiro MVP das Finais de sua carreira.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/WMeRXIyXOTk/mqdefault.jpg" alt="Curry Finals MVP" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Finals MVP — 2022</span>
+                <span class="playlist-item-sub">NBA Finals · Jun 2022</span>
+              </div>
+            </div>
+
+            <div class="playlist-item"
+                 data-video-id="nYkFf3VUYOU"
+                 data-title="Olimpíadas Paris 2024 — Final USA vs França"
+                 data-desc="Curry na final olímpica de Paris. Performance definitiva para selar o ouro americano.">
+              <div class="playlist-thumb">
+                <img src="https://img.youtube.com/vi/nYkFf3VUYOU/mqdefault.jpg" alt="Curry Olimpíadas" />
+                <span class="playlist-play-icon">▶</span>
+              </div>
+              <div class="playlist-item-info">
+                <span class="playlist-item-title">Ouro Olímpico — Paris 2024</span>
+                <span class="playlist-item-sub">Olympics · Ago 2024</span>
+              </div>
+            </div>
+
+          </div><!-- /.playlist-items -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       RODAPÉ
+  ============================================================ -->
+  <footer class="site-footer curry-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo curry-footer-logo">GSW</span>
+          <p>Site de fã dedicado a Stephen Curry e o legado dos Warriors.</p>
+          <p class="footer-disclaimer">Projeto não oficial. Apenas fins educacionais/fã.</p>
+        </div>
+        <div class="footer-links">
+          <h5>Seções</h5>
+          <ul>
+            <li><a href="#perfil">Perfil</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#spotify">Destaques</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+            <li><a href="#player">Vídeos</a></li>
+          </ul>
+        </div>
+        <div class="footer-social">
+          <h5>Links Oficiais</h5>
+          <div class="social-links">
+            <a href="https://www.instagram.com/stephencurry30/" target="_blank" rel="noopener" class="social-link">Instagram</a>
+            <a href="https://twitter.com/StephenCurry30" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
+            <a href="lobby.html" class="social-link curry-lobby-link">← Voltar ao Lobby</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Site Fã — Stephen Curry & GSW. Criado com HTML, CSS e JavaScript puro.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-box" id="modalBox">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">✕</button>
+      <div class="modal-content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Voltar ao topo -->
+  <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- JS da página Curry -->
+  <script src="curry.js"></script>
+</body>
+</html>

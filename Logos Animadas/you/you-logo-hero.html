@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YOU — Hero Logo Animado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  /* ===================================================
+     YOU HERO — Dark Cinema Blood Logo
+     Integre o bloco .you-hero-section no seu index.html
+     Substitui ou complementa o seu <section class="hero">
+  =================================================== */
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: #0a0a0a;
+    color: #f5f0eb;
+    font-family: 'Montserrat', sans-serif;
+    overflow: hidden;
+  }
+
+  /* ── HERO SECTION ── */
+  .you-hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #0a0a0a;
+  }
+
+  /* Vignette atmosférica */
+  .you-hero-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 70% at 50% 50%, transparent 20%, #0a0a0a 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Grain de película */
+  .you-hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    z-index: 3;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* ── N SERIES ── */
+  .n-series-bar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.6em;
+    font-size: 0.78rem;
+    color: #484848;
+    font-weight: 700;
+    margin-bottom: 4px;
+    opacity: 0;
+    animation: youFadeUp 0.9s 0.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .n-series-bar .n-icon {
+    color: #E50914;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: 0;
+    text-shadow: 0 0 20px rgba(229, 9, 20, 0.4);
+  }
+
+  /* ── CANVAS LOGO ── */
+  .you-logo-wrap {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+  }
+  #youCanvas {
+    display: block;
+    max-width: 92vw;
+    opacity: 0;
+    animation: youFadeIn 1.2s 0.1s ease forwards;
+  }
+
+  /* ── SUBTITLE ── */
+  .you-subtitle {
+    position: relative;
+    z-index: 10;
+    font-weight: 700;
+    letter-spacing: 0.72em;
+    font-size: 0.68rem;
+    color: #3a3a3a;
+    margin-top: 14px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: youFadeUp 0.9s 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* ── TAGLINE ── */
+  .you-tagline {
+    position: relative;
+    z-index: 10;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.92rem;
+    color: #1e0000;
+    letter-spacing: 0.14em;
+    margin-top: 20px;
+    opacity: 0;
+    animation: youFadeUp 0.9s 1.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  /* ── SCROLL CUE ── */
+  .you-scroll-cue {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    animation: youFadeUp 0.9s 2.5s ease forwards;
+  }
+  .you-scroll-cue span {
+    font-size: 0.6rem;
+    letter-spacing: 0.4em;
+    color: #2a2a2a;
+    text-transform: uppercase;
+  }
+  .you-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #5a0000, transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  /* ── KEYFRAMES ── */
+  @keyframes youFadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes youFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 0.5; }
+    50%       { transform: scaleY(1.3); opacity: 1; }
+  }
+</style>
+</head>
+<body>
+
+<section class="you-hero-section" id="youHero">
+
+  <!-- N SERIES -->
+  <div class="n-series-bar">
+    <span class="n-icon">N</span>
+    <span>SERIES</span>
+  </div>
+
+  <!-- LOGO CANVAS -->
+  <div class="you-logo-wrap">
+    <canvas id="youCanvas"></canvas>
+  </div>
+
+  <!-- PENN BADGLEY -->
+  <p class="you-subtitle">Penn Badgley</p>
+
+  <!-- TAGLINE -->
+  <p class="you-tagline">You will always be watched.</p>
+
+  <!-- SCROLL CUE -->
+  <div class="you-scroll-cue">
+    <span>Role</span>
+    <div class="you-scroll-line"></div>
+  </div>
+
+</section>
+
+<script>
+(function () {
+  'use strict';
+
+  const canvas = document.getElementById('youCanvas');
+  const ctx = canvas.getContext('2d');
+
+  /* ── Dimensionamento ── */
+  const MAX_W = 820;
+  const W = Math.min(window.innerWidth * 0.9, MAX_W);
+  const FONT_SIZE = W * 0.38;
+  canvas.width  = W;
+  canvas.height = FONT_SIZE * 1.68;
+  const CW = canvas.width;
+  const CH = canvas.height;
+
+  /* ── Cortes do slice (posição Y, espessura, deslocamento X) ── */
+  const CUTS = [
+    { y: CH * 0.265, h: 3.5, dx:  9 },
+    { y: CH * 0.460, h: 2.8, dx: -7 },
+    { y: CH * 0.605, h: 2.2, dx:  5 },
+  ];
+
+  /* ── Função: Desenha "YOU" com slices deslocados ── */
+  function drawYOU() {
+    const FONT = `900 ${FONT_SIZE}px 'Playfair Display', Georgia, serif`;
+    const TEXT_Y = CH * 0.025;
+
+    // Limites dos segmentos entre cortes
+    const segs = [
+      { from: 0,               to: CUTS[0].y,         dx: 0 },
+      { from: CUTS[0].y + CUTS[0].h, to: CUTS[1].y,  dx: CUTS[0].dx },
+      { from: CUTS[1].y + CUTS[1].h, to: CUTS[2].y,  dx: CUTS[1].dx },
+      { from: CUTS[2].y + CUTS[2].h, to: CH,          dx: CUTS[2].dx },
+    ];
+
+    segs.forEach(seg => {
+      ctx.save();
+      ctx.beginPath();
+      ctx.rect(0, seg.from, CW, seg.to - seg.from);
+      ctx.clip();
+      ctx.font = FONT;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillStyle = '#111111';
+      ctx.fillText('YOU', CW / 2 + seg.dx, TEXT_Y);
+      ctx.restore();
+    });
+
+    /* Linhas-fenda vermelhas nos cortes */
+    CUTS.forEach(cut => {
+      const g = ctx.createLinearGradient(CW * 0.08, cut.y, CW * 0.92, cut.y);
+      g.addColorStop(0,    'rgba(60,0,0,0)');
+      g.addColorStop(0.15, 'rgba(160,8,8,0.65)');
+      g.addColorStop(0.5,  'rgba(210,16,16,0.88)');
+      g.addColorStop(0.85, 'rgba(160,8,8,0.65)');
+      g.addColorStop(1,    'rgba(60,0,0,0)');
+      ctx.fillStyle = g;
+      ctx.fillRect(0, cut.y, CW, cut.h);
+
+      /* Reflexo branco-quente ultra fino */
+      ctx.fillStyle = `rgba(255,80,80,0.18)`;
+      ctx.fillRect(0, cut.y, CW, 0.8);
+    });
+  }
+
+  /* ──────────────────────────────────────
+     BLOOD SYSTEM
+  ─────────────────────────────────────── */
+
+  /* Âncoras X: logo Y, O, U */
+  const anchors = () => [
+    CW*0.13, CW*0.17, CW*0.22, CW*0.28,
+    CW*0.37, CW*0.43, CW*0.5,  CW*0.56,
+    CW*0.63, CW*0.70, CW*0.77, CW*0.83, CW*0.88
+  ];
+
+  /* ── Drip (fio grosso escorrendo) ── */
+  class Drip {
+    constructor() { this.reset(true); }
+    reset(init) {
+      const ax = anchors();
+      this.x    = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.06;
+      this.topY = CH * (0.66 + (Math.random() - 0.5) * 0.04);
+      this.maxY = CH * (0.84 + Math.random() * 0.18);
+      this.head = this.topY;
+      this.spd  = 0.14 + Math.random() * 0.52;
+      this.w    = 1.8  + Math.random() * 3.8;
+      this.alpha= 0.50 + Math.random() * 0.38;
+      this.done = false;
+      this.delay= (init ? Math.random() * 4500 : Math.random() * 1200) + performance.now();
+      this.headR= this.w * 1.6;
+    }
+    tick(now) {
+      if (now < this.delay || this.done) return;
+      this.head += this.spd;
+      if (this.head >= this.maxY) this.done = true;
+    }
+    draw(ctx, now) {
+      if (now < this.delay || this.head <= this.topY) return;
+      /* Streak */
+      const g = ctx.createLinearGradient(this.x, this.topY, this.x, this.head);
+      g.addColorStop(0,   `rgba(120,0,0,${this.alpha * 0.6})`);
+      g.addColorStop(0.5, `rgba(100,0,0,${this.alpha})`);
+      g.addColorStop(1,   `rgba(80,0,0,${this.alpha})`);
+      ctx.beginPath();
+      ctx.moveTo(this.x, this.topY);
+      ctx.lineTo(this.x, this.head);
+      ctx.strokeStyle = g;
+      ctx.lineWidth = this.w;
+      ctx.lineCap = 'round';
+      ctx.stroke();
+      /* Cabeça bulbosa */
+      if (!this.done) {
+        ctx.beginPath();
+        ctx.ellipse(this.x, this.head, this.headR * 0.85, this.headR * 1.4, 0, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(130,0,0,${this.alpha})`;
+        ctx.fill();
+      } else {
+        /* Espalha na base */
+        for (let i = 0; i < 3; i++) {
+          const rx = this.w * (1.4 + i * 0.6);
+          const ry = this.w * (0.5 + i * 0.25);
+          const ox = (Math.random() - 0.5) * 4;
+          ctx.beginPath();
+          ctx.ellipse(this.x + ox, this.maxY, rx, ry, 0, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(85,0,0,${this.alpha * (0.7 - i * 0.18)})`;
+          ctx.fill();
+        }
+      }
+    }
+  }
+
+  /* ── Drop (gotas pequenas / spray) ── */
+  class Drop {
+    constructor(init) { this.reset(init); }
+    reset(init) {
+      const ax = anchors();
+      this.x    = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.09;
+      this.y    = CH * (0.64 + (Math.random() - 0.5) * 0.06);
+      this.vy   = 0.5 + Math.random() * 1.8;
+      this.vx   = (Math.random() - 0.5) * 0.55;
+      this.r    = 1.4 + Math.random() * 3.2;
+      this.alpha= 0.65 + Math.random() * 0.32;
+      this.str  = 1   + Math.random() * 2.2;   // stretch vertical
+      this.trail= [];
+      this.delay= (init ? Math.random() * 4000 : Math.random() * 300) + performance.now();
+      this.alive= false;
+    }
+    tick(now) {
+      if (!this.alive) {
+        if (now >= this.delay) this.alive = true;
+        else return;
+      }
+      this.trail.push({ x: this.x, y: this.y, r: this.r * 0.5 });
+      if (this.trail.length > 10) this.trail.shift();
+      this.y   += this.vy;
+      this.x   += this.vx;
+      this.vy  *= 1.018;
+      this.vx  *= 0.97;
+      this.r    = Math.max(0.2, this.r - 0.014);
+      this.alpha= Math.max(0, this.alpha - 0.0018);
+      if (this.y > CH * 1.08 || this.r < 0.2 || this.alpha <= 0) this.reset(false);
+    }
+    draw(ctx) {
+      if (!this.alive) return;
+      this.trail.forEach((t, i) => {
+        const a = (i / this.trail.length) * this.alpha * 0.45;
+        ctx.beginPath();
+        ctx.ellipse(t.x, t.y, t.r * 0.55, t.r * 0.85, 0, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(95,0,0,${a})`;
+        ctx.fill();
+      });
+      ctx.beginPath();
+      ctx.ellipse(this.x, this.y, this.r * 0.68, this.r * this.str, 0, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(${118 + (Math.random() * 20 | 0)},0,0,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  /* ── Poça acumulada na base ── */
+  class Puddle {
+    constructor() {
+      const ax = anchors();
+      this.x = ax[Math.floor(Math.random() * ax.length)] + (Math.random() - 0.5) * CW * 0.07;
+      this.y = CH * (0.87 + Math.random() * 0.1);
+      this.rx = 0;
+      this.ry = 0;
+      this.maxRx = 6 + Math.random() * 18;
+      this.maxRy = this.maxRx * 0.38;
+      this.alpha = 0.35 + Math.random() * 0.25;
+      this.growSpd = 0.04 + Math.random() * 0.12;
+      this.delay = Math.random() * 6000 + performance.now();
+    }
+    tick(now) {
+      if (now < this.delay) return;
+      if (this.rx < this.maxRx) { this.rx += this.growSpd; this.ry = this.rx * 0.38; }
+    }
+    draw(ctx, now) {
+      if (now < this.delay || this.rx < 0.5) return;
+      ctx.beginPath();
+      ctx.ellipse(this.x, this.y, this.rx, this.ry, 0, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(70,0,0,${this.alpha})`;
+      ctx.fill();
+    }
+  }
+
+  /* ── Init partículas ── */
+  const drips   = Array.from({ length: 26 }, () => new Drip());
+  const drops   = Array.from({ length: 140 }, (_, i) => new Drop(true));
+  const puddles = Array.from({ length: 18 }, () => new Puddle());
+
+  /* ── Loop principal ── */
+  let startTime = null;
+  const BLOOD_DELAY = 900; // ms após fontes carregadas
+
+  function loop(now) {
+    if (!startTime) startTime = now;
+    const elapsed = now - startTime;
+
+    ctx.clearRect(0, 0, CW, CH);
+
+    /* Fundo ultra-escuro */
+    ctx.fillStyle = 'rgba(10,10,10,0.08)';
+    ctx.fillRect(0, 0, CW, CH);
+
+    /* Logo com slices */
+    drawYOU();
+
+    /* Sangue só aparece após delay */
+    if (elapsed > BLOOD_DELAY) {
+      puddles.forEach(p => { p.tick(now); p.draw(ctx, now); });
+      drips.forEach(d => { d.tick(now); d.draw(ctx, now); });
+      drops.forEach(d => { d.tick(now); d.draw(ctx); });
+    }
+
+    requestAnimationFrame(loop);
+  }
+
+  /* ── Espera fontes antes de animar ── */
+  document.fonts.ready.then(() => {
+    requestAnimationFrame(loop);
+  });
+
+  /* ── Resize ── */
+  window.addEventListener('resize', () => {
+    const nw = Math.min(window.innerWidth * 0.9, MAX_W);
+    if (Math.abs(nw - W) < 10) return;
+    location.reload();
+  });
+
+})();
+</script>
+</body>
+</html>
