@@ -1,39 +1,12 @@
 /* =============================================================
-   PLAYER.JS — Player de Vídeo Customizado + Botão Voltar + FAB
+   PLAYER.JS — Player de Vídeo Customizado + Botão Voltar
    Arquivo separado para não modificar script.js original
 ============================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
-  initMusicFab();
   initCustomVideoPlayer();
   initBackButton();
 });
-
-/* -------------------------------------------------------
-   BOTÃO DE ÁUDIO FLUTUANTE (FAB)
-------------------------------------------------------- */
-function initMusicFab() {
-  const musicBtn  = document.getElementById('musicControl');
-  const musicIcon = document.getElementById('musicIcon');
-  const audio     = document.getElementById('bgMusic');
-
-  if (!musicBtn || !musicIcon || !audio) return;
-
-  musicBtn.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play().then(() => {
-        musicIcon.className = 'fas fa-pause';
-        musicBtn.classList.add('is-playing');
-      }).catch(err => {
-        console.error("Erro: O usuário precisa interagir com a página primeiro.", err);
-      });
-    } else {
-      audio.pause();
-      musicIcon.className = 'fas fa-play';
-      musicBtn.classList.remove('is-playing');
-    }
-  });
-}
 
 /* -------------------------------------------------------
    BOTÃO VOLTAR AO LOBBY — com delay e áudio
