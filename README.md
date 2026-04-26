@@ -2,7 +2,7 @@
 
 > **Projeto Acadêmico — FATEC Itaquera**  
 > Curso: Desenvolvimento de Software Multiplataforma (DSM)  
-> Disciplina: Desenvolvimento Web I — 2º Semestre
+> Disciplina: Desenvolvimento Web I — 1º Semestre
 
 ---
 
@@ -230,7 +230,7 @@ Você saberá que está funcionando quando:
 - **Disciplina:** Desenvolvimento Web I
 - **Instituição:** FATEC Itaquera
 - **Curso:** Desenvolvimento de Software Multiplataforma (DSM)
-- **Semestre:** 2º
+- **Semestre:** 1º
 
 ---
 
