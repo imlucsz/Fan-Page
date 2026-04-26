@@ -479,10 +479,10 @@ function closeModalEl() {
   const overlay = document.getElementById('modalOverlay');
   if (!overlay) return;
 
-
+  // Pausa e limpa qualquer vídeo dentro do modal para evitar áudio em background
   const modalContent = document.getElementById('modalContent');
   if (modalContent) {
-/* -------------------------------------------------------
+    const videos = modalContent.querySelectorAll('video');
     videos.forEach(video => {
       video.pause();
       video.src = '';
@@ -494,6 +494,8 @@ function closeModalEl() {
   overlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
+
+/* -------------------------------------------------------
    QUIZ — Lógica completa
 ------------------------------------------------------- */
 let quizState = {
