@@ -165,6 +165,8 @@ document.addEventListener('DOMContentLoaded', function () {
   initPlaylist();
   initBackToTop();
   initScrollAnimations();
+  initMusic();
+  initNavBack();
 });
 
 /* -------------------------------------------------------
@@ -748,8 +750,111 @@ function initScrollAnimations() {
 }
 
 /* -------------------------------------------------------
-   EFEITO PARALLAX SUAVE NA HERO
+   BOTÃO DE MÚSICA FLUTUANTE (FAB)
 ------------------------------------------------------- */
+function initMusic() {
+  const btn   = document.getElementById('musicControl');
+  const icon  = document.getElementById('musicIcon');
+  const audio = document.getElementById('bgMusic');
+
+  if (!btn || !audio) return;
+
+  audio.volume = 0.35;
+
+  // Função para sincronizar UI com estado real do áudio
+  function updateUI() {
+    if (audio.paused) {
+      icon.className = 'fas fa-play';
+      btn.classList.remove('is-playing');
+      btn.title = 'Tocar trilha sonora';
+    } else {
+      icon.className = 'fas fa-pause';
+      btn.classList.add('is-playing');
+      btn.title = 'Pausar trilha sonora';
+    }
+  }
+
+  // Clique do botão
+  btn.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    if (audio.paused) {
+      // Tenta tocar
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => updateUI())
+          .catch(err => {
+            console.log('Autoplay bloqueado pelo navegador');
+            btn.title = 'Clique novamente para tocar (bloqueado)';
+          });
+      } else {
+        // Navegadores antigos que não retornam promise
+        updateUI();
+      }
+    } else {
+      // Pausa
+      audio.pause();
+      updateUI();
+    }
+  });
+
+  // Sincroniza UI quando eventos do áudio ocorrem
+  audio.addEventListener('play', updateUI);
+  audio.addEventListener('pause', updateUI);
+  audio.addEventListener('ended', updateUI);
+
+  // Estado inicial
+  updateUI();
+}
+
+/* -------------------------------------------------------
+   BOTÃO VOLTAR AO LOBBY — Transição com áudio de despedida
+------------------------------------------------------- */
+function initNavBack() {
+  const backBtn      = document.getElementById('navBackBtn');
+  const overlay      = document.getElementById('pageOverlay');
+  const goodbyeAudio = document.getElementById('goodbyeAudio');
+  const bgMusic      = document.getElementById('bgMusic');
+
+  if (!backBtn || !overlay) return;
+
+  backBtn.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (!href || href === '#') return;
+
+    e.preventDefault();
+
+    // Para a música de fundo com fade out suave
+    if (bgMusic && !bgMusic.paused) {
+      const fadeOut = setInterval(() => {
+        if (bgMusic.volume > 0.03) {
+          bgMusic.volume = Math.max(0, bgMusic.volume - 0.04);
+        } else {
+          bgMusic.pause();
+          bgMusic.volume = 0.35;
+          clearInterval(fadeOut);
+        }
+      }, 60);
+    }
+
+    // Toca o som de despedida se disponível
+    if (goodbyeAudio) {
+      goodbyeAudio.volume = 0.7;
+      goodbyeAudio.play().catch(() => {});
+    }
+
+    // Ativa o overlay de transição
+    overlay.classList.add('show');
+
+    // Navega após a transição
+    setTimeout(() => {
+      window.location.href = href;
+    }, 2000);
+  });
+}
+
+
 window.addEventListener('scroll', function () {
   const hero     = document.querySelector('.hero');
   const ambText  = document.querySelector('.hero-ambient-text');

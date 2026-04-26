@@ -9,7 +9,6 @@
    1. VARIÁVEIS CSS & RESET
 ------------------------------------------------------- */
 :root {
-  /* Cores principais */
   --black:       #0a0a0a;
   --black-soft:  #111111;
   --black-card:  #161616;
@@ -24,11 +23,9 @@
   --gold:        #c9a84c;
   --gold-dim:    rgba(201,168,76,0.15);
 
-  /* Tipografia */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', system-ui, sans-serif;
 
-  /* Espaçamentos */
   --space-xs:  0.4rem;
   --space-sm:  0.8rem;
   --space-md:  1.6rem;
@@ -36,26 +33,22 @@
   --space-xl:  6.4rem;
   --space-2xl: 10rem;
 
-  /* Bordas */
   --radius-sm:  4px;
   --radius-md:  8px;
   --radius-lg:  16px;
   --radius-xl:  24px;
   --radius-full: 9999px;
 
-  /* Sombras */
   --shadow-sm:  0 2px 8px rgba(0,0,0,0.5);
   --shadow-md:  0 4px 24px rgba(0,0,0,0.6);
   --shadow-lg:  0 8px 48px rgba(0,0,0,0.8);
   --shadow-red: 0 0 32px rgba(192,57,43,0.4);
   --shadow-glow:0 0 60px rgba(192,57,43,0.15);
 
-  /* Transições */
   --trans-fast:   0.15s ease;
   --trans-normal: 0.3s ease;
   --trans-slow:   0.6s cubic-bezier(0.23, 1, 0.32, 1);
 
-  /* Z-index */
   --z-base:    1;
   --z-nav:     100;
   --z-overlay: 200;
@@ -63,17 +56,9 @@
   --z-cursor:  9999;
 }
 
-/* Reset completo */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   background-color: var(--black);
@@ -82,10 +67,9 @@ body {
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none; /* Cursor personalizado */
+  cursor: none;
 }
 
-/* Scrollbar estilizada */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--black); }
 ::-webkit-scrollbar-thumb { background: var(--dark-red); border-radius: 3px; }
@@ -93,20 +77,13 @@ body {
 
 img { max-width: 100%; display: block; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color var(--trans-normal);
-}
+a { color: inherit; text-decoration: none; transition: color var(--trans-normal); }
 
 ul { list-style: none; }
 
 button { cursor: pointer; border: none; background: none; font-family: inherit; }
 
-::selection {
-  background: var(--dark-red);
-  color: var(--white);
-}
+::selection { background: var(--dark-red); color: var(--white); }
 
 /* -------------------------------------------------------
    2. CURSOR PERSONALIZADO
@@ -161,14 +138,12 @@ body:hover .custom-cursor { opacity: 1; }
 .section-subtitle {
   text-align: center;
   color: var(--white-dim);
-  font-size: 1.05rem;
+  font-size: 0.85rem;
   margin-bottom: var(--space-lg);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-size: 0.85rem;
 }
 
-/* Linha decorativa vermelha antes de títulos de seção */
 .section-title::before {
   content: '';
   display: block;
@@ -200,6 +175,40 @@ body:hover .custom-cursor { opacity: 1; }
   box-shadow: 0 2px 24px rgba(0,0,0,0.7);
   backdrop-filter: blur(12px);
 }
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.nav-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(139, 0, 0, 0.15);
+  border: 1px solid rgba(139, 0, 0, 0.35);
+  border-radius: var(--radius-full);
+  color: var(--white-dim);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--trans-normal);
+  text-decoration: none;
+}
+
+.nav-back-btn:hover {
+  background: var(--red);
+  color: var(--white);
+  border-color: var(--red);
+  box-shadow: 0 0 16px var(--red-glow);
+  transform: translateX(-2px);
+}
+
+.nav-back-arrow { font-size: 1rem; line-height: 1; }
+.nav-back-text { font-size: 0.75rem; }
 
 .nav-brand .nav-logo {
   font-family: var(--font-display);
@@ -241,7 +250,6 @@ body:hover .custom-cursor { opacity: 1; }
 .nav-link:hover { color: var(--white); }
 .nav-link:hover::after { width: 100%; }
 
-/* Hambúrguer */
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -274,7 +282,6 @@ body:hover .custom-cursor { opacity: 1; }
   background: var(--black);
 }
 
-/* Gradiente de fundo atmosférico */
 .hero-bg-overlay {
   position: absolute;
   inset: 0;
@@ -285,7 +292,6 @@ body:hover .custom-cursor { opacity: 1; }
   pointer-events: none;
 }
 
-/* Texto "YOU" gigante no fundo */
 .hero-ambient-text {
   position: absolute;
   top: 50%;
@@ -315,10 +321,7 @@ body:hover .custom-cursor { opacity: 1; }
   width: 100%;
 }
 
-/* Foto do herói */
-.hero-image-wrap {
-  position: relative;
-}
+.hero-image-wrap { position: relative; }
 
 .hero-image-frame {
   position: relative;
@@ -331,11 +334,7 @@ body:hover .custom-cursor { opacity: 1; }
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    transparent 40%,
-    rgba(10,10,10,0.9) 100%
-  );
+  background: linear-gradient(to bottom, transparent 40%, rgba(10,10,10,0.9) 100%);
   z-index: 1;
   pointer-events: none;
 }
@@ -362,33 +361,9 @@ body:hover .custom-cursor { opacity: 1; }
   pointer-events: none;
 }
 
-.hero-image-frame:hover .hero-photo {
-  filter: saturate(1) contrast(1.1);
-  transform: scale(1.03);
-}
-
-.hero-image-frame.is-playing .hero-photo {
-  opacity: 0;
-}
-
-.hero-image-frame.is-playing .hero-video {
-  opacity: 1;
-}
-
-/* Efeito glitch na imagem */
-.hero-image-glitch {
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0,0,0,0.03) 2px,
-    rgba(0,0,0,0.03) 4px
-  );
-  pointer-events: none;
-  z-index: 2;
-}
+.hero-image-frame:hover .hero-photo { filter: saturate(1) contrast(1.1); transform: scale(1.03); }
+.hero-image-frame.is-playing .hero-photo { opacity: 0; }
+.hero-image-frame.is-playing .hero-video { opacity: 1; }
 
 .hero-image-label {
   position: absolute;
@@ -410,25 +385,18 @@ body:hover .custom-cursor { opacity: 1; }
   font-style: italic;
 }
 
-/* Borda decorativa na imagem */
 .hero-image-wrap::after {
   content: '';
   position: absolute;
-  top: 16px;
-  left: 16px;
-  right: -16px;
-  bottom: -16px;
+  top: 16px; left: 16px; right: -16px; bottom: -16px;
   border: 1px solid rgba(139,0,0,0.3);
   border-radius: var(--radius-md);
   z-index: -1;
   transition: transform var(--trans-slow);
 }
 
-.hero-image-wrap:hover::after {
-  transform: translate(-4px, -4px);
-}
+.hero-image-wrap:hover::after { transform: translate(-4px, -4px); }
 
-/* Texto do herói */
 .hero-eyebrow {
   font-size: 0.8rem;
   letter-spacing: 0.25em;
@@ -494,7 +462,6 @@ body:hover .custom-cursor { opacity: 1; }
 .hero-bio strong { color: var(--white); font-weight: 600; }
 .hero-bio em { font-style: italic; color: var(--red-bright); }
 
-/* Botões da hero */
 .hero-buttons {
   display: flex;
   gap: var(--space-md);
@@ -521,15 +488,7 @@ body:hover .custom-cursor { opacity: 1; }
   overflow: hidden;
 }
 
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: white;
-  opacity: 0;
-  transition: opacity var(--trans-fast);
-}
-
+.btn::before { content: ''; position: absolute; inset: 0; background: white; opacity: 0; transition: opacity var(--trans-fast); }
 .btn:hover::before { opacity: 0.07; }
 
 .btn-primary {
@@ -556,15 +515,11 @@ body:hover .custom-cursor { opacity: 1; }
   transform: translateY(-2px);
 }
 
-.btn-lg {
-  padding: 1.1rem 2.4rem;
-  font-size: 1rem;
-}
-
+.btn-lg { padding: 1.1rem 2.4rem; font-size: 1rem; }
 .btn-icon { font-size: 1em; }
 
 /* -------------------------------------------------------
-   7. PAINÉIS INFO (Curiosidades/Conquistas)
+   7. PAINÉIS INFO
 ------------------------------------------------------- */
 .info-panel {
   background: var(--black-card);
@@ -572,7 +527,7 @@ body:hover .custom-cursor { opacity: 1; }
   border-radius: var(--radius-md);
   padding: var(--space-lg);
   margin-top: var(--space-md);
-  display: none; /* Oculto por padrão - JS controla */
+  display: none;
   animation: panelReveal 0.35s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
@@ -613,7 +568,6 @@ body:hover .custom-cursor { opacity: 1; }
 
 .panel-list li strong { color: var(--white); }
 
-/* Scroll indicator */
 .scroll-indicator {
   position: absolute;
   bottom: 3rem;
@@ -653,9 +607,7 @@ body:hover .custom-cursor { opacity: 1; }
 .tabs-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(to right, transparent, var(--dark-red), transparent);
 }
@@ -938,6 +890,8 @@ body:hover .custom-cursor { opacity: 1; }
   filter: saturate(1) brightness(1);
 }
 
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+
 
 
 /* Vídeo embed na galeria */
@@ -962,6 +916,219 @@ body:hover .custom-cursor { opacity: 1; }
 
 .gallery-item--video .gallery-overlay {
   pointer-events: none;
+}
+
+/* -------------------------------------------------------
+   PLAYER DE VÍDEO CUSTOMIZADO — Estilo YouTube/Netflix
+------------------------------------------------------- */
+.video-player-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-player-container .gallery-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Botão grande de play no centro */
+.video-big-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 3;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.video-big-play i {
+  font-size: 3.5rem;
+  color: var(--white);
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+  transition: transform 0.2s ease;
+}
+
+.video-player-container:hover .video-big-play i {
+  transform: scale(1.1);
+}
+
+.video-player-container.is-playing .video-big-play {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Controles overlay */
+.video-controls {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, transparent 25%, transparent 70%, rgba(0,0,0,0.75) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.video-player-container:hover .video-controls,
+.video-player-container.is-paused .video-controls {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.video-controls-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.video-title {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+  opacity: 0.9;
+}
+
+.video-controls-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botões dos controles */
+.video-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  color: var(--white);
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.15s ease;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.video-btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.1);
+}
+
+/* Tempo */
+.video-time {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  flex-shrink: 0;
+}
+
+/* Barra de progresso */
+.video-progress-wrap {
+  flex: 1;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.video-progress-bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.video-progress-wrap:hover .video-progress-bar {
+  height: 6px;
+}
+
+.video-progress-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--red);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.video-progress-handle {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 12px;
+  height: 12px;
+  background: var(--red);
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.2s ease, left 0.1s linear;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.video-progress-wrap:hover .video-progress-handle,
+.video-progress-wrap.is-dragging .video-progress-handle {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Estado ativo do player */
+.video-player-container.is-playing .gallery-overlay {
+  opacity: 0;
+}
+
+/* Fullscreen */
+.video-player-container:fullscreen {
+  border-radius: 0;
+}
+
+.video-player-container:fullscreen .gallery-video {
+  object-fit: contain;
+}
+
+/* Mobile ajustes */
+@media (max-width: 768px) {
+  .video-controls {
+    padding: 8px;
+  }
+  .video-btn {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+  }
+  .video-time {
+    font-size: 0.65rem;
+  }
+  .video-title {
+    font-size: 0.78rem;
+  }
+  .video-big-play i {
+    font-size: 2.5rem;
+  }
 }
 
 /* -------------------------------------------------------
@@ -1977,6 +2144,66 @@ body:hover .custom-cursor { opacity: 1; }
 }
 
 /* -------------------------------------------------------
+   BOTÃO DE ÁUDIO FLUTUANTE (FAB)
+------------------------------------------------------- */
+.music-fab {
+  position: fixed;
+  bottom: 100px;
+  right: 25px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(22, 22, 22, 0.8); /* Glassmorphism */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--red);
+  color: var(--white);
+  cursor: pointer;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.music-fab:hover {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--red);
+  box-shadow: 0 0 20px var(--red-glow);
+}
+
+/* Animação de pulso quando a música toca */
+.music-fab.is-playing {
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(160, 10, 10, 0.7); }
+  70% { box-shadow: 0 0 0 15px rgba(160, 10, 10, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(160, 10, 10, 0); }
+}
+
+/* -------------------------------------------------------
+   OVERLAY DE TRANSIÇÃO — Voltar ao Lobby
+------------------------------------------------------- */
+.page-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 1.5s ease-in;
+}
+
+.page-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* -------------------------------------------------------
    18. RESPONSIVIDADE
 ------------------------------------------------------- */
 
@@ -2138,11 +2365,35 @@ body:hover .custom-cursor { opacity: 1; }
   .scroll-indicator { display: none; }
 }
 
-/* Mobile pequeno */
+
 @media (max-width: 480px) {
   .hero-title { font-size: clamp(2.5rem, 12vw, 4rem); }
   .section-title { font-size: clamp(1.6rem, 8vw, 2.5rem); }
   .tab-stats { grid-template-columns: 1fr 1fr; }
   .awards-grid { grid-template-columns: 1fr; }
   .netflix-banner-title { font-size: clamp(3rem, 15vw, 5rem); }
+}
+
+/* -------------------------------------------------------
+   ACTIVE NAV LINK (set by JS via IntersectionObserver)
+------------------------------------------------------- */
+.nav-link.active-nav {
+  color: var(--white);
+}
+.nav-link.active-nav::after {
+  width: 100%;
+}
+
+/* -------------------------------------------------------
+   ACESSIBILIDADE — Redução de movimento
+------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .scroll-arrow { animation: none; }
+  .music-fab.is-playing { animation: none; box-shadow: 0 0 0 3px var(--red); }
 }

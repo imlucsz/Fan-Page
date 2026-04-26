@@ -12,6 +12,8 @@
   <!-- CSS principal + bloco Curry/Lobby -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="curry-lobby.css" />
+  <!-- Font Awesome — Ícones do botão de áudio (placeholder visual) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body data-theme="curry">
 
@@ -791,6 +793,13 @@
 
   <!-- Voltar ao topo -->
   <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+  <!-- ============================================================
+       BOTÃO DE ÁUDIO FLUTUANTE (FAB) — Placeholder visual sem áudio
+  ============================================================ -->
+  <button id="musicControl" class="music-fab" title="Tocar trilha sonora">
+    <i id="musicIcon" class="fas fa-play"></i>
+  </button>
 
   <!-- JS da página Curry -->
   <script src="curry.js"></script>

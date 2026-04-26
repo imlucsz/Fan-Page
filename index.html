@@ -9,8 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome — Ícones do botão de áudio -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
+
+  <!-- Overlay de transição para voltar ao lobby -->
+  <div id="pageOverlay" class="page-overlay"></div>
 
   <!-- ============================================================
        CURSOR PERSONALIZADO
@@ -23,6 +28,10 @@
   ============================================================ -->
   <nav class="navbar" id="navbar">
     <div class="nav-brand">
+      <a href="lobby.html" class="nav-back-btn" id="navBackBtn" aria-label="Voltar ao Lobby">
+        <span class="nav-back-arrow">←</span>
+        <span class="nav-back-text">Lobby</span>
+      </a>
       <span class="nav-logo">YOU</span>
     </div>
     <ul class="nav-links" id="navLinks">
@@ -144,10 +153,10 @@
         <button class="tab-btn" data-tab="premios" role="tab" aria-selected="false">Prêmios</button>
       </div>
 
-      <!-- Conteúdo das abas -->
+      
       <div class="tabs-content">
 
-        <!-- Aba: Sobre -->
+        <!-- sobre -->
         <div class="tab-pane active" id="tab-sobre" role="tabpanel">
           <div class="tab-grid tab-grid--sobre">
             <div class="tab-gif">
@@ -308,21 +317,67 @@
       <p class="section-subtitle">Penn Badgley · Joe Goldberg · YOU</p>
       <div class="gallery-grid" id="galleryGrid">
         <div class="gallery-item gallery-item--large" data-caption="Penn Badgley em evento de divulgação de YOU">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Penn_Badgley_2012.jpg/800px-Penn_Badgley_2012.jpg" alt="Penn Badgley" />
+          <img src="https://i.pinimg.com/736x/9b/ff/e5/9bffe55d08180e64ee37c91351d68c9a.jpg" alt="Penn Badgley" />
           <div class="gallery-overlay"><span>Penn Badgley</span></div>
         </div>
         <div class="gallery-item" data-caption="Joe Goldberg — personagem de YOU">
-          <img src="https://m.media-amazon.com/images/M/MV5BMjQ0Nzk5NTEtYzgxMS00ZjIwLWJlZDYtNjA4NDcwN2UxNjVhXkEyXkFqcGc@._V1_.jpg" alt="YOU série" />
+          <img src="https://i.pinimg.com/1200x/e0/62/c9/e062c9df7fcb58cb4fd6a84a004e3f71.jpg" alt="YOU série" />
           <div class="gallery-overlay"><span>YOU — Netflix</span></div>
         </div>
         <div class="gallery-item" data-caption="Penn Badgley no SAG Awards">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Penn_Badgley_2019_by_Glenn_Francis.jpg/800px-Penn_Badgley_2019_by_Glenn_Francis.jpg" alt="Penn Badgley SAG" />
           <div class="gallery-overlay"><span>SAG Awards</span></div>
         </div>
-        <div class="gallery-item" data-caption="Cena icônica da série YOU">
-          <img src="https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_.jpg" alt="YOU cena" />
-          <div class="gallery-overlay"><span>Cena Icônica</span></div>
+ <div class="gallery-item gallery-item--video" data-caption="Cena icônica da série YOU">
+    <div class="video-player-container" id="customVideoPlayer">
+      <video class="gallery-video" id="galleryVideo" playsinline preload="metadata">
+        <source src="Movies/Kill Joe.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos.
+      </video> 
+
+      <!-- Botão grande de play inicial -->
+      <div class="video-big-play" id="bigPlayBtn">
+        <i class="fas fa-play"></i>
+      </div>
+
+      <!-- Controles overlay -->
+      <div class="video-controls" id="videoControls">
+        <div class="video-controls-top">
+          <span class="video-title">Cena Icônica — YOU</span>
         </div>
+
+        <div class="video-controls-bottom">
+          <button class="video-btn" id="playPauseBtn" aria-label="Play/Pause">
+            <i class="fas fa-play" id="playPauseIcon"></i>
+          </button>
+
+          <div class="video-time">
+            <span id="currentTime">0:00</span>
+            <span>/</span>
+            <span id="totalTime">0:00</span>
+          </div>
+
+          <div class="video-progress-wrap">
+            <div class="video-progress-bar" id="progressBar">
+              <div class="video-progress-fill" id="progressFill"></div>
+              <div class="video-progress-handle" id="progressHandle"></div>
+            </div>
+          </div>
+
+          <button class="video-btn" id="muteBtn" aria-label="Mute/Unmute">
+            <i class="fas fa-volume-mute" id="muteIcon"></i>
+          </button>
+
+          <button class="video-btn" id="fullscreenBtn" aria-label="Tela Cheia">
+            <i class="fas fa-expand" id="fullscreenIcon"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="gallery-overlay"><span>Cena Icônica</span></div>
+    </div>
+ </div>
+        
         <div class="gallery-item" data-caption="Penn Badgley — elegância e intensidade">
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Penn_Badgley_SDCC_2019.jpg/800px-Penn_Badgley_SDCC_2019.jpg" alt="Penn Badgley SDCC" />
           <div class="gallery-overlay"><span>San Diego Comic-Con</span></div>
@@ -491,7 +546,9 @@
           <span class="rating">TV-MA</span>
         </div>
         <div class="netflix-banner-buttons">
+          <a href="https://www.netflix.com/br/title/80211991" target="_blank">
           <button class="btn-netflix btn-netflix-play">▶ Assistir</button>
+        </a>
           <button class="btn-netflix btn-netflix-info" onclick="openModal('you-series')">ℹ Mais Informações</button>
         </div>
       </div>
@@ -505,7 +562,7 @@
 
           <div class="netflix-card" data-modal="you-series">
             <div class="netflix-card-img-wrap">
-              <img src="https://m.media-amazon.com/images/M/MV5BMjQ0Nzk5NTEtYzgxMS00ZjIwLWJlZDYtNjA4NDcwN2UxNjVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="YOU" loading="lazy"/>
+              <img src="/Images/season5.jpg" alt="YOU" loading="lazy"/>
               <div class="netflix-card-hover">
                 <button class="card-play-btn">▶</button>
                 <div class="card-meta">
@@ -839,7 +896,7 @@
           <h5>Redes Sociais (Penn Badgley)</h5>
           <div class="social-links">
             <a href="https://www.instagram.com/pennbadgley/" target="_blank" rel="noopener" class="social-link">Instagram</a>
-            <a href="https://twitter.com/Penn_Badgley" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
+            <a href="https://x.com/PennBadgley" target="_blank" rel="noopener" class="social-link">Twitter / X</a>
           </div>
         </div>
       </div>
@@ -864,7 +921,18 @@
   ============================================================ -->
   <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
 
+  <!-- ============================================================
+       BOTÃO DE ÁUDIO FLUTUANTE (FAB) — Soundtrack YOU
+  ============================================================ -->
+  <button id="musicControl" class="music-fab" title="Tocar trilha sonora">
+    <i id="musicIcon" class="fas fa-play"></i>
+  </button>
+
+  <audio id="bgMusic" src="Audio/soundtrack - YOU.mp3" loop></audio>
+  <audio id="goodbyeAudio" src="Audio/goodb_you.mp3"></audio>
+
   <!-- JS Principal -->
   <script src="script.js"></script>
+  <script src="player.js"></script>
 </body>
 </html>
