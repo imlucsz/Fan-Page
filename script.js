@@ -115,7 +115,7 @@ const MODAL_DATA = {
     badge: "Momento Marcante",
     title: "A Cela de Vidro",
     meta: ["YOU — S1", "Thriller Psicológico", "Símbolo da série"],
-    image: "Images/you_cage.webp",
+    video: "Movies/jaula.mp4",
     desc: `A <strong>cela de vidro</strong> na livraria de Joe Goldberg é um dos elementos mais icônicos da série YOU. Originalmente usada para armazenar livros raros, Joe a converte numa prisão onde mantém suas vítimas enquanto decide o que fazer com elas.
     <br><br>A transparência do vidro é uma metáfora fascinante: Joe observa suas vítimas completamente expostas, mas elas não conseguem escapar. É uma representação física da paranoia e controle obsessivo que define o personagem.
     <br><br>A cela se tornou tão icônica que virou meme, fantasias de Halloween e objeto de debate cultural sobre o fascínio mórbido que a série desperta.`
@@ -435,12 +435,21 @@ window.openModal = function (modalId) {
     ? data.meta.map(m => `<span>${m}</span>`).join('')
     : '';
 
-  const imgHtml = data.image
-    ? `<img class="modal-header-img" src="${data.image}" alt="${data.title}" loading="lazy" />`
-    : '';
+  let mediaHtml = '';
+  if (data.video) {
+    mediaHtml = `
+      <div class="modal-video-wrap">
+        <video class="modal-video" controls autoplay muted loop playsinline>
+          <source src="${data.video}" type="video/mp4">
+          Seu navegador não suporta vídeos.
+        </video>
+      </div>`;
+  } else if (data.image) {
+    mediaHtml = `<img class="modal-header-img" src="${data.image}" alt="${data.title}" loading="lazy" />`;
+  }
 
   content.innerHTML = `
-    ${imgHtml}
+    ${mediaHtml}
     <span class="modal-badge">${data.badge || ''}</span>
     <h2 class="modal-title">${data.title}</h2>
     <div class="modal-meta">${metaHtml}</div>
@@ -469,12 +478,22 @@ function openModalWithContent(htmlContent) {
 function closeModalEl() {
   const overlay = document.getElementById('modalOverlay');
   if (!overlay) return;
+
+
+  const modalContent = document.getElementById('modalContent');
+  if (modalContent) {
+/* -------------------------------------------------------
+    videos.forEach(video => {
+      video.pause();
+      video.src = '';
+      video.load();
+    });
+  }
+
   overlay.classList.remove('active');
   overlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
-
-/* -------------------------------------------------------
    QUIZ — Lógica completa
 ------------------------------------------------------- */
 let quizState = {
@@ -845,6 +864,10 @@ function initNavBack() {
     }
 
     // Ativa o overlay de transição
+
+
+
+    
     overlay.classList.add('show');
 
     // Navega após a transição
