@@ -79,7 +79,7 @@ const MODAL_DATA = {
     badge: "Série de TV — CW",
     title: "Gossip Girl",
     meta: ["2007 – 2012", "6 Temporadas", "Drama Teen", "CW Network"],
-    image: "https://m.media-amazon.com/images/M/MBOGE4NTc4OTEtZGY4NC00NDUwLWFiZTQtMTQ4MjczNmJiM2IzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    image: "Images/GossipGirlPenn.jpg",
     desc: `<strong>Gossip Girl</strong> acompanha a vida luxuosa dos jovens da elite de Manhattan. Penn Badgley interpreta <strong>Dan Humphrey</strong>, o "outsider" de Brooklyn que se apaixona por Serena van der Woodsen (Blake Lively).
     <br><br>Durante 6 temporadas, a série manteve um suspense: quem é o(a) Gossip Girl, o blogueiro anônimo que expõe os segredos de todos? No finale, a revelação chocante: era Dan o tempo todo, usando o blog como forma de pertencer ao mundo que tanto desejava.
     <br><br>A série lançou Penn ao estrelato internacional e estabeleceu sua capacidade de interpretar personagens moralmente ambíguos — o que seria a base para Joe Goldberg anos depois.`
@@ -88,16 +88,16 @@ const MODAL_DATA = {
     badge: "Filme · 2010",
     title: "Easy A",
     meta: ["2010", "Comédia Romântica", "Will Gluck (dir.)", "Columbia Pictures"],
-    image: "https://m.media-amazon.com/images/M/MV5BMTQxODE1NTM4OV5BMl5BanBnXkFtZTcwMzExMDUyMw@@._V1_FMjpg_UX1000_.jpg",
+    image: "Images/easyApenn.jpg",
     desc: `Em <strong>Easy A</strong>, Penn Badgley interpreta Todd, o interesse amoroso da protagonista Olive (Emma Stone). A comédia romântica baseada livremente em "A Letra Escarlate" foi um sucesso de crítica e bilheteria.
     <br><br>O filme demonstrou que Penn tinha charme e talento para o cinema, além de ótima química com outros atores. Emma Stone foi indicada ao Globo de Ouro pelo papel.
     <br><br>Easy A é considerado um dos filmes teen mais inteligentes dos anos 2010, com roteiro afiado e performances memoráveis.`
   },
   "margin-call": {
     badge: "Filme · 2011",
-    title: "Margin Call",
+    title: "Margin Call", 
     meta: ["2011", "Thriller Financeiro", "J.C. Chandor (dir.)", "Lionsgate"],
-    image: "https://m.media-amazon.com/images/M/MV5BMjI4MzgxMzQzMF5BMl5BanBnXkFtZTcwMzg0NjMwNw@@._V1_FMjpg_UX1000_.jpg",
+    image: "images/margincallpenn.jpg",
     desc: `<strong>Margin Call</strong> é um thriller financeiro que retrata as 24 horas que precederam a crise financeira de 2008 em um banco de investimentos de Wall Street. Penn Badgley interpreta Seth Bregman, um jovem analista.
     <br><br>O elenco ensemble inclui Kevin Spacey, Jeremy Irons, Paul Bettany, Demi Moore e Zachary Quinto. O filme recebeu indicação ao Oscar de Melhor Roteiro Original.
     <br><br>Para Penn, foi uma oportunidade de trabalhar em drama adulto e sério, afastando-se da imagem teen de Gossip Girl.`
@@ -106,7 +106,7 @@ const MODAL_DATA = {
     badge: "Netflix · 2023",
     title: "YOU — Season 4",
     meta: ["2023", "10 Episódios", "Netflix", "87M lares na estreia"],
-    image: "https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    image: "images/season4.webp",
     desc: `Na <strong>4ª temporada</strong>, Joe Goldberg foge para <strong>Londres</strong>, adotando a identidade de "Jonathan Moore", um professor universitário. Mas sua natureza não muda — e um novo assassino em série começa a seguir sua trilha.
     <br><br>A temporada deu uma nova camada ao personagem: desta vez, Joe parece estar sendo caçado, numa inversão inteligente do formato. A trama de detetive foi muito elogiada pelos críticos.
     <br><br>Com 87 milhões de lares assistindo nas primeiras semanas, foi um dos maiores lançamentos da história da Netflix, consolidando Penn Badgley como um dos atores mais relevantes do streaming.`
@@ -124,7 +124,9 @@ const MODAL_DATA = {
     badge: "Recurso Narrativo",
     title: "A Voz de Joe",
     meta: ["YOU — Todas as temporadas", "Narração em 1ª pessoa"],
-    image: "https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    audio: "Audio/MinhaPunição.mp3",
+    audioTitle: "Minha Punição",
+    audioSubtitle: "Áudio Original",
     desc: `Um dos elementos mais geniais de YOU é a <strong>narração em primeira pessoa de Joe</strong>, ouvida pelo espectador em tempo real. Enquanto ele comete atos perturbadores, sua voz nos faz entender — e até concordar — com sua lógica distorcida.
     <br><br>Penn Badgley domina esse recurso com maestria. Sua voz calma, intelectual e às vezes poética cria uma intimidade com o público que é simultaneamente encantadora e perturbadora.
     <br><br>Este recurso narrativo é fundamental para o sucesso de YOU: ao ouvir Joe pensar, o espectador é cúmplice — o que gera um desconforto delicioso e debate sobre ética narrativa.`
@@ -133,7 +135,7 @@ const MODAL_DATA = {
     badge: "Gossip Girl — 2012",
     title: "Dan = Gossip Girl",
     meta: ["Gossip Girl — S6 Finale", "2012", "Revelação histórica"],
-    image: "https://m.media-amazon.com/images/M/MBOGE4NTc4OTEtZGY4NC00NDUwLWFiZTQtMTQ4MjczNmJiM2IzXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    image: "Images/dan.jpg",
     desc: `No finale da 6ª temporada de Gossip Girl, a grande revelação: <strong>Dan Humphrey era o Gossip Girl</strong> desde o início. O outsider de Brooklyn que tanto parecia odiar o blog era, na verdade, seu criador.
     <br><br>A revelação dividiu fãs: alguns adoraram a subversão, outros acharam implausível. Mas tornou Dan em um dos personagens mais ambíguos da TV teen — um homem que criou uma persona para manipular e pertencer ao mundo que amava.
     <br><br>Em retrospecto, essa camada de Dan Humphrey antecipou perfeitamente o que Penn Badgley faria com Joe Goldberg: personagens que parecem simpáticos mas escondem motivações sombrias.`
@@ -142,7 +144,7 @@ const MODAL_DATA = {
     badge: "YOU Season 4 · 2023",
     title: "Joe em Londres",
     meta: ["YOU — S4", "2023", "Nova fase"],
-    image: "https://m.media-amazon.com/images/M/MV5BNjY3OTRhNzQtNDgyNC00NzM3LTlhM2ItZjliNjJlM2Y2N2VhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg",
+    image: "Images/joelondres.jpg",
     desc: `Na 4ª temporada, Joe Goldberg foge para <strong>Londres</strong> como "Jonathan Moore", um professor de literatura americana em uma universidade de elite. Ele acredita que pode recomeçar, deixar o passado para trás.
     <br><br>Londres representa a reinvenção — mas também a impossibilidade de fugir de si mesmo. Joe logo se vê envolvido em novos crimes, nova obsessão e a ameaça de um assassino que parece conhecê-lo.
     <br><br>A mudança de cenário revitalizou a série. A estética britânica, os novos personagens excêntricos e o formato mais próximo de um whodunit trouxeram novos fãs e surpreenderam os antigos.`
@@ -444,6 +446,41 @@ window.openModal = function (modalId) {
           Seu navegador não suporta vídeos.
         </video>
       </div>`;
+  } else if (data.audio) {
+    mediaHtml = `
+      <div class="modal-audio-player" id="modalAudioPlayer">
+        <div class="audio-visualizer">
+          <div class="audio-wave"></div>
+          <div class="audio-wave"></div>
+          <div class="audio-wave"></div>
+          <div class="audio-wave"></div>
+          <div class="audio-wave"></div>
+        </div>
+        <div class="audio-info">
+          <span class="audio-title">${data.audioTitle || data.title}</span>
+          <span class="audio-subtitle">${data.audioSubtitle || ''}</span>
+        </div>
+        <audio id="modalAudio" src="${data.audio}" preload="metadata"></audio>
+        <div class="audio-controls">
+          <button class="audio-btn audio-play-btn" id="modalAudioPlayBtn" aria-label="Play/Pause">
+            <i class="fas fa-play" id="modalAudioPlayIcon"></i>
+          </button>
+          <div class="audio-time">
+            <span id="modalAudioCurrent">0:00</span>
+            <span>/</span>
+            <span id="modalAudioTotal">0:00</span>
+          </div>
+          <div class="audio-progress-wrap" id="modalAudioProgressWrap">
+            <div class="audio-progress-bar" id="modalAudioProgressBar">
+              <div class="audio-progress-fill" id="modalAudioProgressFill"></div>
+              <div class="audio-progress-handle" id="modalAudioProgressHandle"></div>
+            </div>
+          </div>
+          <button class="audio-btn audio-mute-btn" id="modalAudioMuteBtn" aria-label="Mute/Unmute">
+            <i class="fas fa-volume-up" id="modalAudioMuteIcon"></i>
+          </button>
+        </div>
+      </div>`;
   } else if (data.image) {
     mediaHtml = `<img class="modal-header-img" src="${data.image}" alt="${data.title}" loading="lazy" />`;
   }
@@ -459,6 +496,11 @@ window.openModal = function (modalId) {
   overlay.setAttribute('aria-hidden', 'false');
   overlay.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  // Inicializa player de áudio se presente
+  if (data.audio) {
+    initModalAudioPlayer();
+  }
 };
 
 // Abre modal com conteúdo HTML direto
@@ -488,11 +530,174 @@ function closeModalEl() {
       video.src = '';
       video.load();
     });
+
+    // Pausa e limpa qualquer áudio do modal
+    const modalAudio = modalContent.querySelector('#modalAudio');
+    if (modalAudio) {
+      modalAudio.pause();
+      modalAudio.src = '';
+      modalAudio.load();
+    }
   }
 
   overlay.classList.remove('active');
   overlay.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+}
+
+/* -------------------------------------------------------
+   PLAYER DE ÁUDIO DO MODAL
+------------------------------------------------------- */
+function initModalAudioPlayer() {
+  const audio        = document.getElementById('modalAudio');
+  const playBtn      = document.getElementById('modalAudioPlayBtn');
+  const playIcon     = document.getElementById('modalAudioPlayIcon');
+  const muteBtn      = document.getElementById('modalAudioMuteBtn');
+  const muteIcon     = document.getElementById('modalAudioMuteIcon');
+  const progressWrap = document.getElementById('modalAudioProgressWrap');
+  const progressBar  = document.getElementById('modalAudioProgressBar');
+  const progressFill = document.getElementById('modalAudioProgressFill');
+  const progressHandle = document.getElementById('modalAudioProgressHandle');
+  const currentTimeEl = document.getElementById('modalAudioCurrent');
+  const totalTimeEl   = document.getElementById('modalAudioTotal');
+  const playerWrap   = document.getElementById('modalAudioPlayer');
+
+  if (!audio || !playBtn || !progressWrap) return;
+
+  let isDragging = false;
+
+  function formatTime(seconds) {
+    if (isNaN(seconds)) return '0:00';
+    const m = Math.floor(seconds / 60);
+    const s = Math.floor(seconds % 60);
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function updatePlayState() {
+    if (audio.paused) {
+      playIcon.className = 'fas fa-play';
+      playerWrap && playerWrap.classList.remove('is-playing');
+    } else {
+      playIcon.className = 'fas fa-pause';
+      playerWrap && playerWrap.classList.add('is-playing');
+    }
+  }
+
+  function updateMuteState() {
+    if (audio.muted || audio.volume === 0) {
+      muteIcon.className = 'fas fa-volume-mute';
+    } else if (audio.volume < 0.5) {
+      muteIcon.className = 'fas fa-volume-down';
+    } else {
+      muteIcon.className = 'fas fa-volume-up';
+    }
+  }
+
+  function updateProgress() {
+    if (!isDragging && audio.duration) {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      progressFill.style.width = pct + '%';
+      progressHandle.style.left = pct + '%';
+    }
+    currentTimeEl.textContent = formatTime(audio.currentTime);
+  }
+
+  function updateTotalTime() {
+    totalTimeEl.textContent = formatTime(audio.duration);
+  }
+
+  function togglePlay(e) {
+    if (e) e.stopPropagation();
+    if (audio.paused) {
+      audio.play().catch(() => {});
+    } else {
+      audio.pause();
+    }
+  }
+
+  function toggleMute(e) {
+    if (e) e.stopPropagation();
+    audio.muted = !audio.muted;
+    updateMuteState();
+  }
+
+  function seekTo(clientX) {
+    const rect = progressBar.getBoundingClientRect();
+    let pct = (clientX - rect.left) / rect.width;
+    pct = Math.max(0, Math.min(1, pct));
+    if (audio.duration) {
+      audio.currentTime = pct * audio.duration;
+    }
+    progressFill.style.width = (pct * 100) + '%';
+    progressHandle.style.left = (pct * 100) + '%';
+  }
+
+  // Event listeners
+  playBtn.addEventListener('click', togglePlay);
+  muteBtn.addEventListener('click', toggleMute);
+
+  audio.addEventListener('play', updatePlayState);
+  audio.addEventListener('pause', updatePlayState);
+  audio.addEventListener('timeupdate', updateProgress);
+  audio.addEventListener('loadedmetadata', updateTotalTime);
+  audio.addEventListener('ended', () => {
+    updatePlayState();
+    audio.currentTime = 0;
+    progressFill.style.width = '0%';
+    progressHandle.style.left = '0%';
+  });
+
+  // Barra de progresso — mouse
+  progressWrap.addEventListener('click', (e) => {
+    e.stopPropagation();
+    seekTo(e.clientX);
+  });
+
+  progressWrap.addEventListener('mousedown', (e) => {
+    e.stopPropagation();
+    isDragging = true;
+    progressWrap.classList.add('is-dragging');
+    seekTo(e.clientX);
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      seekTo(e.clientX);
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      progressWrap.classList.remove('is-dragging');
+    }
+  });
+
+  // Touch support
+  progressWrap.addEventListener('touchstart', (e) => {
+    e.stopPropagation();
+    isDragging = true;
+    progressWrap.classList.add('is-dragging');
+    seekTo(e.touches[0].clientX);
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+      seekTo(e.touches[0].clientX);
+    }
+  }, { passive: true });
+
+  document.addEventListener('touchend', () => {
+    if (isDragging) {
+      isDragging = false;
+      progressWrap.classList.remove('is-dragging');
+    }
+  });
+
+  // Inicializa estados
+  audio.volume = 1.0;
+  updatePlayState();
+  updateMuteState();
 }
 
 /* -------------------------------------------------------
