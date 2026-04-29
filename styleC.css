@@ -454,6 +454,22 @@ body.cursor-hover .custom-cursor {
   grid-template-columns: 1fr 1fr;
   gap: 48px; align-items: start;
 }
+ .tab-gif {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  .tab-gif {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.tab-gif img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+
 .tab-text h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 16px; }
 .tab-text p  { font-size: 0.95rem; color: var(--sp-text-secondary); margin-bottom: 12px; line-height: 1.7; }
 .tab-text strong { color: var(--sp-text-primary); }
