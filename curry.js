@@ -959,5 +959,64 @@ function updatePlayerUI() {
   });
 })();
 
+/* ── MÚSICA DE FUNDO (FAB BUTTON) ───────────────────────────── */
+(function initMusicFab() {
+  const musicFabBtn   = document.getElementById('musicControl');
+  const musicFabIcon = document.getElementById('musicIcon');
+  const bgMusic      = document.getElementById('bgMusic');
+
+  if (!musicFabBtn || !bgMusic) return;
+
+  // Volume padrão
+  bgMusic.volume = 0.35;
+
+  // Função para atualizar UI
+  function updateMusicUI() {
+    if (bgMusic.paused) {
+      if (musicFabIcon) musicFabIcon.className = 'fas fa-play';
+      if (musicFabBtn) {
+        musicFabBtn.classList.remove('is-playing');
+        musicFabBtn.title = 'Tocar música';
+      }
+    } else {
+      if (musicFabIcon) musicFabIcon.className = 'fas fa-pause';
+      if (musicFabBtn) {
+        musicFabBtn.classList.add('is-playing');
+        musicFabBtn.title = 'Pausar música';
+      }
+    }
+  }
+
+  // Clique do botão FAB
+  musicFabBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (bgMusic.paused) {
+      // Tentar tocar
+      const playPromise = bgMusic.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => updateMusicUI())
+          .catch(err => {
+            console.log('Autoplay bloqueado pelo navegador');
+            musicFabBtn.title = 'Clique novamente para tocar (bloqueado)';
+          });
+      }
+    } else {
+      // Pausar
+      bgMusic.pause();
+      updateMusicUI();
+    }
+  });
+
+  // Sincronizar UI quando eventos do áudio ocorrem
+  bgMusic.addEventListener('play', updateMusicUI);
+  bgMusic.addEventListener('pause', updateMusicUI);
+  bgMusic.addEventListener('ended', updateMusicUI);
+
+  // Estado inicial
+  updateMusicUI();
+})();
+
 console.log('%c🏀 Stephen Curry Fan Page v2.0', 'color:#1DB954;font-size:16px;font-weight:900;');
 console.log('%cSpotify-inspired design · Built with pure HTML, CSS & JS', 'color:#b3b3b3;font-size:11px;');

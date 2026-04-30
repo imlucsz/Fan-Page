@@ -451,8 +451,9 @@ body.cursor-hover .custom-cursor {
 }
 .tab-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px; align-items: start;
+  grid-template-columns: 220px 1fr 320px;
+  gap: 48px;
+  align-items: start;
 }
  .tab-gif {
     max-width: 240px;
